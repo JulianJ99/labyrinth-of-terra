@@ -22,6 +22,26 @@ public class BaseUnit : MonoBehaviour {
 
     [SerializeField] public float moveSpeed = 5f;
 
+    [Header("Additional Stats")]
+    public int strength;
+    public int magic;
+    public int dexterity;
+    public int speed;
+    public int resistance;
+    public int luck;
+
+    [Header("Stat growth Bias")]
+    [Range(0f, 1f)] public float hpvPrio;
+    [Range(0f, 1f)] public float atkPrio;
+    [Range(0f, 1f)] public float defPrio;
+    [Range(0f, 1f)] public float movPrio;
+    [Range(0f, 1f)] public float strPrio;
+    [Range(0f, 1f)] public float magPrio;
+    [Range(0f, 1f)] public float dexPrio;
+    [Range(0f, 1f)] public float spdPrio;
+    [Range(0f, 1f)] public float resPrio;
+    [Range(0f, 1f)] public float lckPrio;
+
     public LayerMask whatStopsMovement;
 
     public enum LastAxis { None, X, Y }
@@ -32,10 +52,7 @@ public class BaseUnit : MonoBehaviour {
 
     public Transform originalMovePoint;
 
-    public int originalMovement; 
-
-     
-    
+    public int originalMovement;
 
     void Start(){
         originalMovePoint.position = movePoint.position;
