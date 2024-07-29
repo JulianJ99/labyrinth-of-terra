@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 4544352022378276768}
   - component: {fileID: 649486644376742752}
   - component: {fileID: 7053297064799165923}
+  - component: {fileID: -1022223499073736981}
   m_Layer: 0
   m_Name: Hero1
   m_TagString: Untagged
@@ -141,6 +142,23 @@ MonoBehaviour:
   defense: 5
   movementRange: 5
   moveSpeed: 10
+  className: 
+  strength: 0
+  magic: 0
+  dexterity: 0
+  speed: 0
+  resistance: 0
+  luck: 0
+  hpvPrio: 0
+  atkPrio: 0
+  defPrio: 0
+  movPrio: 0
+  strPrio: 0
+  magPrio: 0
+  dexPrio: 0
+  spdPrio: 0
+  resPrio: 0
+  lckPrio: 0
   whatStopsMovement:
     serializedVersion: 2
     m_Bits: 64
@@ -170,6 +188,28 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-1022223499073736981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7447933458573026352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b98368d5e58e4a4bbe5828c538ebb02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  classes:
+  - {fileID: 11400000, guid: f727a4d6440356f488eaec99b2f46533, type: 2}
+  - {fileID: 11400000, guid: 737d58c156e71cd4898777fae130c5e5, type: 2}
+  - {fileID: 11400000, guid: f9d8e44694f74a44caae010a788c0cac, type: 2}
+  - {fileID: 11400000, guid: ed2ce136218a9334c996d60c07938c71, type: 2}
+  - {fileID: 11400000, guid: 8375ed6820a7e5645b6af2c273e0dcfa, type: 2}
+  - {fileID: 11400000, guid: 9afe4d079cdb2624cb3803a44feac232, type: 2}
+  - {fileID: 11400000, guid: 279bb59c18ef51d49a041e9f2b732b2f, type: 2}
+  - {fileID: 11400000, guid: 867128c21390321439f1bad5d4ff3ca7, type: 2}
+  - {fileID: 11400000, guid: 4f762fd3dfdf56242be8a9a47e17c47d, type: 2}
 --- !u!1 &7549572504786820491
 GameObject:
   m_ObjectHideFlags: 0

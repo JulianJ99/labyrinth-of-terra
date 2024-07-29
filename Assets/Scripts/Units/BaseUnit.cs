@@ -22,6 +22,8 @@ public class BaseUnit : MonoBehaviour {
 
     [SerializeField] public float moveSpeed = 5f;
 
+    public string className;
+
     [Header("Additional Stats")]
     public int strength;
     public int magic;

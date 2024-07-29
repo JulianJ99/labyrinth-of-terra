@@ -14,7 +14,7 @@ public class CharacterManager : MonoBehaviour
     public int characterPool = 3;
 
     private string currentName;
-    private string currentClass;
+    private string className;
     private int currentIndex = 0;
     private Sprite currentImage;
 
@@ -41,13 +41,18 @@ public class CharacterManager : MonoBehaviour
         for(int i = 0; i < characterPool; i++)
         {
             var HeroPrefab = Instantiate(heroFramework.gameObject);
+            CharacterClasses classManager = HeroPrefab.GetComponent<CharacterClasses>();
+
+            classManager.RandomizeClass();
+            classManager.AdjustStatsGrowths();
+            classManager.ChangeCharacter();
+
             currentImage = HeroPrefab.GetComponent<SpriteRenderer>().sprite;
             RandomizeValues();
-            SelectUI();
             ChangeCharacterStats(HeroPrefab);
-            currentIndex++;
-
+            SelectUI();
             HeroPrefab.name = currentName;
+            currentIndex++;
         }
     }
 
@@ -55,6 +60,7 @@ public class CharacterManager : MonoBehaviour
     {
         Hero1 currentChar = HeroToChange.GetComponent<Hero1>();
         currentChar.UnitName = currentName;
+        className = currentChar.className;
 
         currentChar.health = RandomizeValue(hpvMin, hpvMax, currentChar.hpvPrio);
         currentChar.attack = RandomizeValue(atkMin, atkMax, currentChar.atkPrio);
@@ -70,9 +76,11 @@ public class CharacterManager : MonoBehaviour
 
     private void SelectUI()
     {
-        TMP_Text CharName = charSpacesUI[currentIndex].GetComponentInChildren<TMP_Text>();
+        TMP_Text[] Texts = charSpacesUI[currentIndex].GetComponentsInChildren<TMP_Text>();
         Image CharImage = charSpacesUI[currentIndex].GetComponentInChildren<Image>();
-        CharName.text = currentName;
+
+        Texts[0].text = currentName;
+        Texts[1].text = className;
         CharImage.sprite = currentImage;
     }
 
