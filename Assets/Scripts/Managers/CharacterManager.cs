@@ -12,11 +12,13 @@ public class CharacterManager : MonoBehaviour
     public BaseHero heroFramework;
     public GameObject[] charSpacesUI;
     public int characterPool = 3;
+    public PartyManager partyManager;
 
     private string currentName;
     private string className;
     private int currentIndex = 0;
     private Sprite currentImage;
+    private int currentCost;
 
     [Header("Random Values")]
     public List<string> randomNames = new List<string>();
@@ -30,6 +32,9 @@ public class CharacterManager : MonoBehaviour
     public int spdMin, spdMax;
     public int resMin, resMax;
     public int lckMin, lckMax;
+
+    [Header("Resources")]
+    public int minCost, maxCost;
 
     void Start()
     {
@@ -51,6 +56,10 @@ public class CharacterManager : MonoBehaviour
             RandomizeValues();
             ChangeCharacterStats(HeroPrefab);
             SelectUI();
+  
+            Button button = charSpacesUI[currentIndex].GetComponentInChildren<Button>();
+            button.onClick.AddListener(() => partyManager.RecruitCharacter(HeroPrefab, button, currentCost));
+
             HeroPrefab.name = currentName;
             currentIndex++;
         }
@@ -72,6 +81,10 @@ public class CharacterManager : MonoBehaviour
         currentChar.speed = RandomizeValue(spdMin, spdMax, currentChar.spdPrio);
         currentChar.resistance = RandomizeValue(resMin, resMax, currentChar.resPrio);
         currentChar.luck = RandomizeValue(lckMin, lckMax, currentChar.lckPrio);
+
+        currentChar.cost = UnityEngine.Random.Range(minCost, maxCost);
+
+        currentCost = currentChar.cost;
     }
 
     private void SelectUI()
@@ -81,6 +94,7 @@ public class CharacterManager : MonoBehaviour
 
         Texts[0].text = currentName;
         Texts[1].text = className;
+        Texts[2].text = currentCost.ToString();
         CharImage.sprite = currentImage;
     }
 
@@ -95,6 +109,5 @@ public class CharacterManager : MonoBehaviour
         float randomValue = UnityEngine.Random.Range(minValue, maxValue);
         float biasNumber = Mathf.Lerp(minValue, maxValue, biasValue);
         return Mathf.RoundToInt((randomValue + biasNumber) / 2);
-
     }
 }

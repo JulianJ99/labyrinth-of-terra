@@ -32,6 +32,8 @@ public class BaseUnit : MonoBehaviour {
     public int resistance;
     public int luck;
 
+    public int cost;
+
     [Header("Stat growth Bias")]
     [Range(0f, 1f)] public float hpvPrio;
     [Range(0f, 1f)] public float atkPrio;
