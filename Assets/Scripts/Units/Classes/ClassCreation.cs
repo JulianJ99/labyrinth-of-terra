@@ -18,4 +18,7 @@ public class ClassCreation : ScriptableObject
     [Range(0f, 1f)] public float spdPrio;
     [Range(0f, 1f)] public float resPrio;
     [Range(0f, 1f)] public float lckPrio;
+
+    public List<WeaponAffinity> weaponAffinities;
 }
+

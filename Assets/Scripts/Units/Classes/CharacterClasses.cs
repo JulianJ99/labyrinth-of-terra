@@ -27,6 +27,8 @@ public class CharacterClasses : MonoBehaviour
         statManager.spdPrio = currentClass.spdPrio;
         statManager.resPrio = currentClass.resPrio;
         statManager.lckPrio = currentClass.lckPrio;
+
+        AssignAffinities(statManager);
     }
 
     public void ChangeCharacter()
@@ -35,5 +37,10 @@ public class CharacterClasses : MonoBehaviour
         Hero1 character = GetComponent<Hero1>();
         spriteRenderer.sprite = currentClass.classSprite;
         character.className = currentClass.className;
+    }
+
+    public void AssignAffinities(Hero1 unit)
+    {
+        unit.weaponsAffinities = currentClass.weaponAffinities;
     }
 }

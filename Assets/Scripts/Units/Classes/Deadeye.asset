@@ -24,3 +24,6 @@ MonoBehaviour:
   spdPrio: 0.199
   resPrio: 0.318
   lckPrio: 0.851
+  weaponAffinities:
+  - weapon: {fileID: 11400000, guid: 375cb700981de9f42a3dfd1cef8fd4f6, type: 2}
+    affinity: 75

@@ -34,6 +34,8 @@ public class BaseUnit : MonoBehaviour {
 
     public int cost;
 
+    public List<WeaponAffinity> weaponsAffinities;
+
     [Header("Stat growth Bias")]
     [Range(0f, 1f)] public float hpvPrio;
     [Range(0f, 1f)] public float atkPrio;
