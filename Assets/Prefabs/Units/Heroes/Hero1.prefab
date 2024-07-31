@@ -149,6 +149,8 @@ MonoBehaviour:
   speed: 0
   resistance: 0
   luck: 0
+  cost: 0
+  weaponsAffinities: []
   hpvPrio: 0
   atkPrio: 0
   defPrio: 0
@@ -210,6 +212,17 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 279bb59c18ef51d49a041e9f2b732b2f, type: 2}
   - {fileID: 11400000, guid: 867128c21390321439f1bad5d4ff3ca7, type: 2}
   - {fileID: 11400000, guid: 4f762fd3dfdf56242be8a9a47e17c47d, type: 2}
+  randomChance: 0.15
+  allWeapons:
+  - {fileID: 11400000, guid: bff9e4c58431a314ab413683e508efdc, type: 2}
+  - {fileID: 11400000, guid: 375cb700981de9f42a3dfd1cef8fd4f6, type: 2}
+  - {fileID: 11400000, guid: fcd542aa98949c64a81df19c458d8a94, type: 2}
+  - {fileID: 11400000, guid: 24e0f371f879d4a47a4661be87364504, type: 2}
+  - {fileID: 11400000, guid: b406c09199970f44e8b4f60fb91768f5, type: 2}
+  - {fileID: 11400000, guid: 1815c7d1016fafb4ab1521113276d497, type: 2}
+  - {fileID: 11400000, guid: c2a428f598b098145b9b01e381b0bb7f, type: 2}
+  - {fileID: 11400000, guid: 259f38dd3b86c6049b135fb6617b1e8a, type: 2}
+  - {fileID: 11400000, guid: dd61ab2e13ae7cd42aaa0697c9c010f5, type: 2}
 --- !u!1 &7549572504786820491
 GameObject:
   m_ObjectHideFlags: 0
