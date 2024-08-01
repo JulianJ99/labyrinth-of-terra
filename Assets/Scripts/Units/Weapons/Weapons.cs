@@ -11,10 +11,15 @@ public class Weapons : ScriptableObject
     public string weaponSpecial;
 
     public int weaponDurability;
+    public int weaponMight;
     public float weaponHit;
     public float weaponCrit;
     public float weaponReqAff;
     public float weaponCost;
+
+    public int upgradeMight;
+    public float upgradeHit;
+    public float upgradeCrit;
 }
 
 [System.Serializable]

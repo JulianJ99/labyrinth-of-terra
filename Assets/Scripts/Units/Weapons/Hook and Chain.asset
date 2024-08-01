@@ -17,7 +17,11 @@ MonoBehaviour:
   weaponType: Ranged Blunt
   weaponSpecial: Pull
   weaponDurability: 25
+  weaponMight: 4
   weaponHit: 70
   weaponCrit: 0
   weaponReqAff: 50
   weaponCost: 300
+  upgradeMight: 1
+  upgradeHit: 5
+  upgradeCrit: 3

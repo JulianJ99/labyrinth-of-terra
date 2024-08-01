@@ -17,7 +17,11 @@ MonoBehaviour:
   weaponType: Blunt
   weaponSpecial: Knockback
   weaponDurability: 30
+  weaponMight: 6
   weaponHit: 70
   weaponCrit: 2
   weaponReqAff: 25
   weaponCost: 300
+  upgradeMight: 1
+  upgradeHit: 5
+  upgradeCrit: 3

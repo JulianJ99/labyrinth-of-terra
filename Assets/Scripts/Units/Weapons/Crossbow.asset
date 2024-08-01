@@ -17,7 +17,11 @@ MonoBehaviour:
   weaponType: Ranged Jab
   weaponSpecial: Reactive Shot
   weaponDurability: 25
+  weaponMight: 5
   weaponHit: 80
   weaponCrit: 3
   weaponReqAff: 35
   weaponCost: 250
+  upgradeMight: 1
+  upgradeHit: 5
+  upgradeCrit: 3

@@ -17,7 +17,11 @@ MonoBehaviour:
   weaponType: Slashing
   weaponSpecial: Cleave
   weaponDurability: 30
+  weaponMight: 6
   weaponHit: 75
   weaponCrit: 0
   weaponReqAff: 25
   weaponCost: 300
+  upgradeMight: 1
+  upgradeHit: 5
+  upgradeCrit: 3
