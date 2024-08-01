@@ -36,6 +36,10 @@ public class BaseUnit : MonoBehaviour {
 
     public List<WeaponAffinity> weaponsAffinities;
 
+    [Header("EXP System")]
+    public int currentLevel;
+    public float expAmount;
+
     [Header("Stat growth Bias")]
     [Range(0f, 1f)] public float hpvPrio;
     [Range(0f, 1f)] public float atkPrio;

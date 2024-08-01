@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 649486644376742752}
   - component: {fileID: 7053297064799165923}
   - component: {fileID: -1022223499073736981}
+  - component: {fileID: 6566385728216124623}
   m_Layer: 0
   m_Name: Hero1
   m_TagString: Untagged
@@ -151,6 +152,8 @@ MonoBehaviour:
   luck: 0
   cost: 0
   weaponsAffinities: []
+  currentLevel: 1
+  expAmount: 0
   hpvPrio: 0
   atkPrio: 0
   defPrio: 0
@@ -212,7 +215,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 279bb59c18ef51d49a041e9f2b732b2f, type: 2}
   - {fileID: 11400000, guid: 867128c21390321439f1bad5d4ff3ca7, type: 2}
   - {fileID: 11400000, guid: 4f762fd3dfdf56242be8a9a47e17c47d, type: 2}
-  randomChance: 0.15
   allWeapons:
   - {fileID: 11400000, guid: bff9e4c58431a314ab413683e508efdc, type: 2}
   - {fileID: 11400000, guid: 375cb700981de9f42a3dfd1cef8fd4f6, type: 2}
@@ -223,6 +225,18 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c2a428f598b098145b9b01e381b0bb7f, type: 2}
   - {fileID: 11400000, guid: 259f38dd3b86c6049b135fb6617b1e8a, type: 2}
   - {fileID: 11400000, guid: dd61ab2e13ae7cd42aaa0697c9c010f5, type: 2}
+--- !u!114 &6566385728216124623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7447933458573026352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 951abf2176d7ff8488fb2901103a1a0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7549572504786820491
 GameObject:
   m_ObjectHideFlags: 0

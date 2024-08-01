@@ -881,7 +881,7 @@ GameObject:
   - component: {fileID: 392671675}
   - component: {fileID: 392671676}
   m_Layer: 0
-  m_Name: CharacterManager
+  m_Name: CharacterGenerationManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
