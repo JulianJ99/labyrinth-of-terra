@@ -62,4 +62,12 @@ public class CharacterClasses : MonoBehaviour
         }
 
     }
+
+    public void GiveWeapon()
+    {
+        CharacterInventory inven = GetComponent<CharacterInventory>();
+        GameObject weaponToAdd = Instantiate(currentClass.classWeapon);
+
+        inven.AddToInventory(weaponToAdd);
+    }
 }

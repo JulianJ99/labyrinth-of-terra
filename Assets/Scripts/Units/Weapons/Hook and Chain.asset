@@ -16,3 +16,8 @@ MonoBehaviour:
   weaponSprite: {fileID: 0}
   weaponType: Ranged Blunt
   weaponSpecial: Pull
+  weaponDurability: 25
+  weaponHit: 70
+  weaponCrit: 0
+  weaponReqAff: 50
+  weaponCost: 300

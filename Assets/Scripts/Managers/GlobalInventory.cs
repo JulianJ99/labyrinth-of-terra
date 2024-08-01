@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GlobalInventory : MonoBehaviour
 {
-    new List<GameObject> globalInventory = new List<GameObject>();
+    public new List<GameObject> globalInventory = new List<GameObject>();
 
     // Start is called before the first frame update
     void Start()

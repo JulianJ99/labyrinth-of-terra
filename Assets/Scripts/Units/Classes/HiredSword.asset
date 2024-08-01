@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   className: Hired Sword
   classSprite: {fileID: 21300000, guid: 01ed21b4c381dfa4e8f92ef52b6d2842, type: 3}
+  classWeapon: {fileID: 8957720132813694147, guid: 30e00107da0112549bd093393bf071c6, type: 3}
   hpvPrio: 0.552
   atkPrio: 0.592
   defPrio: 0.398

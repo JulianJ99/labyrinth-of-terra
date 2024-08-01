@@ -16,3 +16,8 @@ MonoBehaviour:
   weaponSprite: {fileID: 0}
   weaponType: Ranged Slash
   weaponSpecial: Burning Tile
+  weaponDurability: 25
+  weaponHit: 75
+  weaponCrit: 0
+  weaponReqAff: 25
+  weaponCost: 250

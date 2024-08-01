@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CharacterInventory : MonoBehaviour
 {
-    new List<GameObject> inventory = new List<GameObject>();
+    public new List<GameObject> inventory = new List<GameObject>();
 
     // Start is called before the first frame update
     void Start()
@@ -13,10 +13,20 @@ public class CharacterInventory : MonoBehaviour
     }
     public void AddToInventory(GameObject item)
     {
-
+        inventory.Add(item);
     }
 
     public void RemoveFromInventory(GameObject item)
+    {
+
+    }
+
+    public void Equipitem(GameObject item)
+    {
+
+    }
+
+    public void UseItem(GameObject item)
     {
 
     }

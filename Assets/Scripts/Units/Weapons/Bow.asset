@@ -16,3 +16,8 @@ MonoBehaviour:
   weaponSprite: {fileID: 0}
   weaponType: Ranged Jab
   weaponSpecial: Reactive Shot
+  weaponDurability: 30
+  weaponHit: 75
+  weaponCrit: 0
+  weaponReqAff: 25
+  weaponCost: 250

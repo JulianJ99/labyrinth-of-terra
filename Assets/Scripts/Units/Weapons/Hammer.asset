@@ -16,3 +16,8 @@ MonoBehaviour:
   weaponSprite: {fileID: 0}
   weaponType: Blunt
   weaponSpecial: Knockback
+  weaponDurability: 30
+  weaponHit: 70
+  weaponCrit: 2
+  weaponReqAff: 25
+  weaponCost: 300

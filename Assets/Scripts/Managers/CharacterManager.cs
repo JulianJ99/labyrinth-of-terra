@@ -52,6 +52,7 @@ public class CharacterManager : MonoBehaviour
             classManager.AdjustStatsGrowths();
             classManager.ChangeCharacter();
             classManager.AssignAffinities();
+            classManager.GiveWeapon();
 
             currentImage = HeroPrefab.GetComponent<SpriteRenderer>().sprite;
             RandomizeValues();

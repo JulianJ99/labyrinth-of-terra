@@ -7,6 +7,7 @@ public class ClassCreation : ScriptableObject
 {
     public string className;
     public Sprite classSprite;
+    public GameObject classWeapon;
 
     [Range(0f, 1f)] public float hpvPrio;
     [Range(0f, 1f)] public float atkPrio;

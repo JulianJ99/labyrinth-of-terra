@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   className: Geomancer
   classSprite: {fileID: 21300000, guid: 91fddece6fa6f8c42ad50edaf1f37c81, type: 3}
+  classWeapon: {fileID: 8957720132813694147, guid: 1443c3470e4062446b390fa5ae5c5c29, type: 3}
   hpvPrio: 0.706
   atkPrio: 0.284
   defPrio: 0.642

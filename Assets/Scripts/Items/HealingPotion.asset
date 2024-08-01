@@ -9,15 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c3427ca8cf32aa4fbc23c2032cf467c, type: 3}
-  m_Name: Spear
+  m_Script: {fileID: 11500000, guid: 26a84158edb5fc74ca460d223de85645, type: 3}
+  m_Name: HealingPotion
   m_EditorClassIdentifier: 
-  weaponName: Spear
-  weaponSprite: {fileID: 0}
-  weaponType: Jab
-  weaponSpecial: Pierce
-  weaponDurability: 30
-  weaponHit: 75
-  weaponCrit: 0
-  weaponReqAff: 25
-  weaponCost: 250
+  itemName: HealingPotion
+  itemSprite: {fileID: 0}

@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   className: Marksman
   classSprite: {fileID: 21300000, guid: 01ed21b4c381dfa4e8f92ef52b6d2842, type: 3}
+  classWeapon: {fileID: 8957720132813694147, guid: 86a657d684775fd48b5ac5d4a7cd1a03, type: 3}
   hpvPrio: 0.289
   atkPrio: 0.816
   defPrio: 0.114
