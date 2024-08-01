@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+namespace Terra { 
 public class GrassTile : Tile
 {
     [SerializeField] private Color _baseColor, _offsetColor;
@@ -10,4 +11,5 @@ public class GrassTile : Tile
         var isOffset = (x + y) % 2 == 1;
         _renderer.color = isOffset ? _offsetColor : _baseColor;
     }
+}
 }

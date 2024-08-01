@@ -4,6 +4,7 @@ using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
+namespace Terra { 
 public class UnitManager : MonoBehaviour {
     public static UnitManager Instance;
 
@@ -55,4 +56,5 @@ public class UnitManager : MonoBehaviour {
         SelectedHero = hero;
         MenuManager.Instance.ShowSelectedHero(hero);
     }
+}
 }

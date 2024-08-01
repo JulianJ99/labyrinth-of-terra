@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+namespace Terra { 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
@@ -49,4 +50,5 @@ public enum GameState
     SpawnEnemies = 2,
     HeroesTurn = 3,
     EnemiesTurn = 4
+}
 }

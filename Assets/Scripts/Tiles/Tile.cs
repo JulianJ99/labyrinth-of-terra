@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+namespace Terra{
+
+
 public abstract class Tile : MonoBehaviour {
     public string TileName;
     [SerializeField] protected SpriteRenderer _renderer;
@@ -60,5 +63,6 @@ public abstract class Tile : MonoBehaviour {
         OccupiedUnit = unit;
         unit.OccupiedTile = this;
         }
+    }
     }
 }
