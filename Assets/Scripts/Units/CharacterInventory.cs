@@ -5,7 +5,7 @@ using UnityEngine;
 public class CharacterInventory : MonoBehaviour
 {
     public new List<GameObject> inventory = new List<GameObject>();
-
+    public int inventorySpace;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,7 +13,14 @@ public class CharacterInventory : MonoBehaviour
     }
     public void AddToInventory(GameObject item)
     {
-        inventory.Add(item);
+        if(inventory.Count <= inventorySpace)
+        {
+            inventory.Add(item);
+        }
+        else
+        {
+            FullInventory();
+        }
     }
 
     public void RemoveFromInventory(GameObject item)
@@ -29,5 +36,10 @@ public class CharacterInventory : MonoBehaviour
     public void UseItem(GameObject item)
     {
 
+    }
+
+    public void FullInventory()
+    {
+        print("testing");
     }
 }

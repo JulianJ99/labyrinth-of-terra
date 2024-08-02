@@ -15,7 +15,7 @@ public class Weapons : ScriptableObject
     public float weaponHit;
     public float weaponCrit;
     public float weaponReqAff;
-    public float weaponCost;
+    public int weaponCost;
 
     public int upgradeMight;
     public float upgradeHit;

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Sword
   m_EditorClassIdentifier: 
   weaponName: Sword
-  weaponSprite: {fileID: 0}
+  weaponSprite: {fileID: 21300000, guid: 15e0d11efd0299a4fbc315dee30efb9e, type: 3}
   weaponType: Slashing
   weaponSpecial: Cleave
   weaponDurability: 30

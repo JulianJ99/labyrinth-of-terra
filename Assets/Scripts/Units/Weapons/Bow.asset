@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Bow
   m_EditorClassIdentifier: 
   weaponName: Bow
-  weaponSprite: {fileID: 0}
+  weaponSprite: {fileID: 21300000, guid: 0069b33b12bcd344ab2b33cc78d1972a, type: 3}
   weaponType: Ranged Jab
   weaponSpecial: Reactive Shot
   weaponDurability: 30

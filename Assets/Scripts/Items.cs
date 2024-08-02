@@ -8,4 +8,7 @@ public class Items : ScriptableObject
     public string itemName;
     public Sprite itemSprite;
 
+    public int itemUses;
+    public float itemHeal;
+
 }

@@ -15,7 +15,7 @@ public class WeaponManager : MonoBehaviour
     public float hitChance;
     public float critChance;
     public float requiredAffinity;
-    public float cost;
+    public int cost;
     
     void Start()
     {

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Hook and Chain
   m_EditorClassIdentifier: 
   weaponName: Hook and Chain
-  weaponSprite: {fileID: 0}
+  weaponSprite: {fileID: 21300000, guid: 91fddece6fa6f8c42ad50edaf1f37c81, type: 3}
   weaponType: Ranged Blunt
   weaponSpecial: Pull
   weaponDurability: 25

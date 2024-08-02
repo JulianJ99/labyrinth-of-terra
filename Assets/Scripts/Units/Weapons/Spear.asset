@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Spear
   m_EditorClassIdentifier: 
   weaponName: Spear
-  weaponSprite: {fileID: 0}
+  weaponSprite: {fileID: 21300000, guid: 01ed21b4c381dfa4e8f92ef52b6d2842, type: 3}
   weaponType: Jab
   weaponSpecial: Pierce
   weaponDurability: 30
