@@ -6,6 +6,7 @@ public class WeaponManager : MonoBehaviour
 {
     public Weapons weaponRef;
     private SpriteRenderer spriteRenderer;
+    public MerchantWeapons weaponsCreation;
 
     public int weaponLevel;
     public string type;

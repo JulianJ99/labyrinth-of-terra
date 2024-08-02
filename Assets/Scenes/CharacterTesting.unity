@@ -386,6 +386,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 584316996}
     m_Modifications:
+    - target: {fileID: 1110700241052842558, guid: 3b5a785058408d043942309bf4d1e253, type: 3}
+      propertyPath: weaponsCreation
+      value: 
+      objectReference: {fileID: 1051857074}
     - target: {fileID: 8135420577410483147, guid: 3b5a785058408d043942309bf4d1e253, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1976,6 +1980,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 584316996}
     m_Modifications:
+    - target: {fileID: 1110700241052842558, guid: 1443c3470e4062446b390fa5ae5c5c29, type: 3}
+      propertyPath: weaponsCreation
+      value: 
+      objectReference: {fileID: 1732305047}
     - target: {fileID: 8135420577410483147, guid: 1443c3470e4062446b390fa5ae5c5c29, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -3761,6 +3769,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 584316996}
     m_Modifications:
+    - target: {fileID: 1110700241052842558, guid: 5018eca40c41965479df6d31f8d1feca, type: 3}
+      propertyPath: weaponsCreation
+      value: 
+      objectReference: {fileID: 1779332475}
     - target: {fileID: 8135420577410483147, guid: 5018eca40c41965479df6d31f8d1feca, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -5840,7 +5852,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1728900865
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8169,6 +8181,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 584316996}
     m_Modifications:
+    - target: {fileID: 1110700241052842558, guid: 86a657d684775fd48b5ac5d4a7cd1a03, type: 3}
+      propertyPath: weaponsCreation
+      value: 
+      objectReference: {fileID: 1090691538}
     - target: {fileID: 8135420577410483147, guid: 86a657d684775fd48b5ac5d4a7cd1a03, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -8368,8 +8384,8 @@ CanvasRenderer:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 584316996}
   - {fileID: 1801647305}
   - {fileID: 495888122}
   - {fileID: 539779768}
   - {fileID: 1373766399}
-  - {fileID: 584316996}

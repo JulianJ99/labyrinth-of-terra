@@ -18,22 +18,24 @@ public class MerchantWeapons : MonoBehaviour
 
     private SpriteRenderer spriteRenderer;
     private int weaponCost;
+    private bool alreadySet = false;
 
-    // Start is called before the first frame update
-    void Start()
+    public void OnEnable()
     {
-        WeaponManager weaponInfo = weapon.GetComponent<WeaponManager>();
-        spriteRenderer = weapon.GetComponent<SpriteRenderer>();
+        if(!alreadySet)
+        {
+            WeaponManager weaponInfo = weapon.GetComponent<WeaponManager>();
+            spriteRenderer = weapon.GetComponent<SpriteRenderer>();
 
-        image.sprite = spriteRenderer.sprite;
-        nameText.text = weapon.name;
-        durabilityText.text = weaponInfo.durability.ToString() + "/" + weaponInfo.durability.ToString();
-        costText.text = weaponInfo.cost.ToString();
-        weaponCost = weaponInfo.cost;
+            image.sprite = spriteRenderer.sprite;
+            nameText.text = weapon.name;
+            durabilityText.text = weaponInfo.durability.ToString() + "/" + weaponInfo.durability.ToString();
+            costText.text = weaponInfo.cost.ToString();
+            weaponCost = weaponInfo.cost;
 
-        button.onClick.AddListener(() => PurchaseWeapon());
-
-        print(weapon.name);
+            button.onClick.AddListener(() => PurchaseWeapon());
+            alreadySet = true;
+        }
     }
 
     public void PurchaseWeapon()
