@@ -69,5 +69,6 @@ public class CharacterClasses : MonoBehaviour
         GameObject weaponToAdd = Instantiate(currentClass.classWeapon);
 
         inven.AddToInventory(weaponToAdd);
+        weaponToAdd.transform.parent = transform;
     }
 }

@@ -8,6 +8,11 @@ public class PartyManager : MonoBehaviour
     public ResourceManager ResourceManager;
     public List<GameObject> partyMembers = new List<GameObject>();
 
+    private void Awake()
+    {
+        DontDestroyOnLoad(gameObject);
+    }
+
     public void RecruitCharacter(GameObject character, Button button, int amount)
     {
         int myMoney = ResourceManager.CheckCurrent();
@@ -17,6 +22,8 @@ public class PartyManager : MonoBehaviour
             partyMembers.Add(character);
             button.interactable = false;
             ResourceManager.SubtractValue(amount);
+
+            character.GetComponent<SaveManagement>().SaveCharacter();
         }
         else
         {

@@ -5,10 +5,10 @@ using UnityEngine;
 public class GlobalInventory : MonoBehaviour
 {
     public new List<GameObject> globalInventory = new List<GameObject>();
-    // Start is called before the first frame update
-    void Start()
+
+    private void Awake()
     {
-        
+        DontDestroyOnLoad(gameObject);
     }
 
     public void AddToConvoy(GameObject item)
