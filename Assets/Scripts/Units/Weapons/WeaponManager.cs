@@ -11,6 +11,7 @@ public class WeaponManager : MonoBehaviour
     public string type;
     public int might;
     public int durability;
+    public int maxDurability;
     public bool isBroken = false;
     public float hitChance;
     public float critChance;
@@ -34,6 +35,7 @@ public class WeaponManager : MonoBehaviour
         hitChance = weaponRef.weaponHit;
         critChance = weaponRef.weaponCrit;
         requiredAffinity = weaponRef.weaponReqAff;
+        maxDurability = durability;
 
         cost = weaponRef.weaponCost;
     }

@@ -18,11 +18,6 @@ public class UpgradeWeapons : MonoBehaviour
     public int baseUpgradeCost;
     public int increaseCost;
     private int upgradeCost;
-    // Start is called before the first frame update
-    void Start()
-    {
-        UpdateUpgradeCost();
-    }
 
     public void UpgradeMight()
     {
