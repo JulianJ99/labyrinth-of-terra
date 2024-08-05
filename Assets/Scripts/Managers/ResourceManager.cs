@@ -10,14 +10,12 @@ public class ResourceManager : MonoBehaviour
     private void Awake()
     {
         DontDestroyOnLoad(gameObject);
-        currentMoney = DataManager.instance.currentMoney;
     }
 
     public void SubtractValue(int amount)
     {
         currentMoney -= amount;
         moneyDisplay.text = currentMoney.ToString();
-        DataManager.instance.currentMoney = currentMoney;
     }
 
     public int CheckCurrent()

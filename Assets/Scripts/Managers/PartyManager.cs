@@ -23,7 +23,7 @@ public class PartyManager : MonoBehaviour
             button.interactable = false;
             ResourceManager.SubtractValue(amount);
 
-            character.GetComponent<SaveManagement>().SaveCharacter();
+            character.transform.parent = transform;
         }
         else
         {

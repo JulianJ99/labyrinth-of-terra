@@ -14,6 +14,7 @@ public class GlobalInventory : MonoBehaviour
     public void AddToConvoy(GameObject item)
     {
         globalInventory.Add(item);
+        item.transform.parent = transform;
     }
 
     public void TakeFromConvoy(GameObject item)
