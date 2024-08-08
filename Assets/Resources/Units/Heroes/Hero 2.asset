@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Hero 2
   m_EditorClassIdentifier: 
   Faction: 0
-  UnitPrefab: {fileID: 649486644376742752, guid: 1e4760ca54066064cac718b2095605b8, type: 3}
+  UnitPrefab: {fileID: 1082802793126658538, guid: 5235a611485c1a1468249ce26032e132, type: 3}

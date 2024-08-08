@@ -160,7 +160,7 @@ MonoBehaviour:
   defense: 10
   movementRange: 3
   standingOnTile: {fileID: 0}
-  TurnReady: 0
+  TurnReady: 1
 --- !u!1 &7549572504786820491
 GameObject:
   m_ObjectHideFlags: 0
