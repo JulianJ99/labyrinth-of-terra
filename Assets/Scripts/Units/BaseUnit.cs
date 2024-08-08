@@ -17,5 +17,9 @@ public class BaseUnit : MonoBehaviour {
 
     [SerializeField] public int defense;
 
+    [SerializeField] public int movementRange;
+
+    public OverlayTile standingOnTile;
+
 }
 }

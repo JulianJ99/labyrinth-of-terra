@@ -134,15 +134,12 @@ MonoBehaviour:
   UnitName: Bounty Hunter
   OccupiedTile: {fileID: 0}
   Faction: 0
-  movePoint: {fileID: 4205944367564940622}
   anim: {fileID: 7053297064799165923}
   health: 20
   attack: 10
   defense: 5
-  cursor: {fileID: 7771570097690443989, guid: c62068902a20b7d498c6d92dd373e85a, type: 3}
-  speed: 0
-  characterPrefab: {fileID: 7447933458573026352}
-  movementRange: 5
+  movementRange: 4
+  standingOnTile: {fileID: 0}
 --- !u!95 &7053297064799165923
 Animator:
   serializedVersion: 5

@@ -1,17 +1,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
-using static finished3.ArrowTranslator;
+using static Terra.ArrowTranslator;
 
-namespace finished3
+namespace Terra
 {
     public class MouseController : MonoBehaviour
     {
         public GameObject cursor;
         public float speed;
         public GameObject characterPrefab;
-        public int movementRange = 3;
-        private CharacterInfo character;
+        private BaseUnit character;
 
         private PathFinder pathFinder;
         private RangeFinder rangeFinder;
@@ -29,12 +28,13 @@ namespace finished3
             path = new List<OverlayTile>();
             isMoving = false;
             rangeFinderTiles = new List<OverlayTile>();
+            
         }
 
         void LateUpdate()
         {
             RaycastHit2D? hit = GetFocusedOnTile();
-
+            
             if (hit.HasValue)
             {
                 OverlayTile tile = hit.Value.collider.gameObject.GetComponent<OverlayTile>();
@@ -47,7 +47,7 @@ namespace finished3
 
                     foreach (var item in rangeFinderTiles)
                     {
-                        MapManager.Instance.map[item.grid2DLocation].SetSprite(ArrowDirection.None);
+                        GridManager.Instance.map[item.grid2DLocation].SetSprite(ArrowDirection.None);
                     }
 
                     for (int i = 0; i < path.Count; i++)
@@ -66,7 +66,7 @@ namespace finished3
 
                     if (character == null)
                     {
-                        character = Instantiate(characterPrefab).GetComponent<CharacterInfo>();
+                        character = Instantiate(characterPrefab).GetComponent<BaseUnit>();
                         PositionCharacterOnLine(tile);
                         GetInRangeTiles();
                     }
@@ -115,6 +115,7 @@ namespace finished3
 
         private static RaycastHit2D? GetFocusedOnTile()
         {
+            
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             Vector2 mousePos2D = new Vector2(mousePos.x, mousePos.y);
 
@@ -130,7 +131,7 @@ namespace finished3
 
         private void GetInRangeTiles()
         {
-            rangeFinderTiles = rangeFinder.GetTilesInRange(new Vector2Int(character.standingOnTile.gridLocation.x, character.standingOnTile.gridLocation.y), movementRange);
+            rangeFinderTiles = rangeFinder.GetTilesInRange(new Vector2Int(character.standingOnTile.gridLocation.x, character.standingOnTile.gridLocation.y), character.movementRange);
 
             foreach (var item in rangeFinderTiles)
             {

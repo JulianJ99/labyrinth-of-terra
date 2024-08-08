@@ -33,18 +33,24 @@ namespace finished3
 
             foreach (var tm in tileMaps)
             {
+                
                 BoundsInt bounds = tm.cellBounds;
-
+Debug.Log(bounds);
                 for (int z = bounds.max.z; z > bounds.min.z; z--)
                 {
+                    Debug.Log("Test Z");
                     for (int y = bounds.min.y; y < bounds.max.y; y++)
                     {
+                        Debug.Log("Test Y");
                         for (int x = bounds.min.x; x < bounds.max.x; x++)
                         {
+                            Debug.Log("Test X");
                             if (tm.HasTile(new Vector3Int(x, y, z)))
                             {
+                                Debug.Log("Tile");
                                 if (!map.ContainsKey(new Vector2Int(x, y)))
                                 {
+                                    Debug.Log("No key");
                                     var overlayTile = Instantiate(overlayPrefab, overlayContainer.transform);
                                     var cellWorldPosition = tm.GetCellCenterWorld(new Vector3Int(x, y, z));
                                     overlayTile.transform.position = new Vector3(cellWorldPosition.x, cellWorldPosition.y, cellWorldPosition.z + 1);

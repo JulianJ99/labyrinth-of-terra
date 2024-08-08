@@ -25,13 +25,15 @@ public class GameManager : MonoBehaviour
         switch (newState)
         {
             case GameState.GenerateGrid:
+                
                 GridManager.Instance.GenerateGrid();
                 break;
             case GameState.SpawnHeroes:
-                UnitManager.Instance.SpawnHeroes();
+                Debug.Log("Case 2");
+                //UnitManager.Instance.SpawnHeroes();
                 break;
             case GameState.SpawnEnemies:
-                UnitManager.Instance.SpawnEnemies();
+                //UnitManager.Instance.SpawnEnemies();
                 break;
             case GameState.HeroesTurn:
                 break;
