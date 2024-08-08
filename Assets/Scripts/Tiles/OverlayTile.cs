@@ -18,6 +18,18 @@ namespace Terra
 
         public List<Sprite> arrows;
 
+        public BaseUnit OccupiedUnit;
+
+        [SerializeField] private bool _isWalkable;
+
+        public bool Walkable => _isWalkable && OccupiedUnit == null;
+
+        
+
+        public virtual void Init(int x, int y)
+        {
+
+        }
 
         private void Update()
         {
@@ -48,6 +60,15 @@ namespace Terra
                 GetComponentsInChildren<SpriteRenderer>()[1].sortingOrder = gameObject.GetComponent<SpriteRenderer>().sortingOrder;
             }
         }
+
+        public void SetUnit(BaseUnit unit) {   
+        
+        if (unit.standingOnTile != null) unit.standingOnTile.OccupiedUnit = null;
+        unit.transform.position = gridLocation;
+        OccupiedUnit = unit;
+        unit.standingOnTile = this;
+        
+    }
 
     }
 }

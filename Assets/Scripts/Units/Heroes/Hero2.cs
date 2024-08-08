@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace Terra { 
-public class Hero1 : BaseHero
+public class Hero2 : BaseHero
 {
     // Start is called before the first frame update
     void Start()

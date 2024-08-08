@@ -6,7 +6,7 @@ using UnityEngine.UI;
 namespace Terra {
 public class BaseUnit : MonoBehaviour {
     public string UnitName;
-    public Tile OccupiedTile;
+    
     public Faction Faction;
 
     public Animator anim; 
@@ -20,6 +20,8 @@ public class BaseUnit : MonoBehaviour {
     [SerializeField] public int movementRange;
 
     public OverlayTile standingOnTile;
+
+    public bool TurnReady;
 
 }
 }

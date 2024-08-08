@@ -51,28 +51,28 @@ public class GridManager : MonoBehaviour {
             {
                 
                 BoundsInt bounds = tm.cellBounds;
-                Debug.Log(bounds);
+                
                 for (int z = bounds.max.z; z >= bounds.min.z; z--)
                 {
-                    Debug.Log("Test Z");
+                   
                     for (int y = bounds.min.y; y < bounds.max.y; y++)
                     {
-                        Debug.Log("Test Y");
+                       
                         for (int x = bounds.min.x; x < bounds.max.x; x++)
                         {
-                            Debug.Log("Test X");
+                            
                             if (tm.HasTile(new Vector3Int(x, y, z)))
                             {
-                                Debug.Log("Tile");
+                                
                                 if (!map.ContainsKey(new Vector2Int(x, y)))
                                 {
-                                    Debug.Log("No key");
+                                    
                                     var overlayTile = Instantiate(overlayPrefab, overlayContainer.transform);
                                     var cellWorldPosition = tm.GetCellCenterWorld(new Vector3Int(x, y, z));
                                     overlayTile.transform.position = new Vector3(cellWorldPosition.x, cellWorldPosition.y, cellWorldPosition.z + 1);
                                     overlayTile.GetComponent<SpriteRenderer>().sortingOrder = tm.GetComponent<TilemapRenderer>().sortingOrder + 1;
                                     overlayTile.gameObject.GetComponent<OverlayTile>().gridLocation = new Vector3Int(x, y, z);
-    
+                                    overlayTile.name = $"Tile {x} {y}";
                                     map.Add(new Vector2Int(x, y), overlayTile.gameObject.GetComponent<OverlayTile>());
                                     
                                 }
@@ -103,22 +103,23 @@ public class GridManager : MonoBehaviour {
 
         
         //Debug.Log("Grid spawned");
-        //GameManager.Instance.ChangeState(GameState.SpawnHeroes);
+        GameManager.Instance.ChangeState(GameState.SpawnHeroes);
     }
 
-    //public Tile GetHeroSpawnTile() {
-        //return undermap.Where(t => t.Key.x < _width / 2 && t.Value.Walkable).OrderBy(t => Random.value).First().Value;
-    //}
+    public OverlayTile GetHeroSpawnTile() {             
+        return map.Where(t => t.Key.x > _width / 2).OrderBy(t => Random.value).First().Value;
+    }
 
-    //public Tile GetEnemySpawnTile(){
-        //return undermap.Where(t => t.Key.x > _width / 2 && t.Value.Walkable).OrderBy(t => Random.value).First().Value;
-    //}
+    public OverlayTile GetEnemySpawnTile(){
+        return map.Where(t => t.Key.x > _width / 2).OrderBy(t => Random.value).First().Value;
+    }
 
     public Tile GetTileAtPosition(Vector2Int pos)
     {
         if (undermap.TryGetValue(pos, out var tile)) return tile;
         return null;
     }
+    
     public List<OverlayTile> GetSurroundingTiles(Vector2Int originTile)
     {
         var surroundingTiles = new List<OverlayTile>();

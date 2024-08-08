@@ -41,10 +41,10 @@ GameObject:
   m_Component:
   - component: {fileID: 7212002333034076962}
   - component: {fileID: 4544352022378276768}
-  - component: {fileID: 649486644376742752}
   - component: {fileID: 7053297064799165923}
+  - component: {fileID: 1082802793126658538}
   m_Layer: 0
-  m_Name: Hero1
+  m_Name: Hero2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -108,7 +108,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 91fddece6fa6f8c42ad50edaf1f37c81, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 21301b07962fe1840b64cdd58d0a62fb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -119,27 +119,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &649486644376742752
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7447933458573026352}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff4f46c86037cb64ebe0eea97aedf002, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  UnitName: Bounty Hunter
-  Faction: 0
-  anim: {fileID: 7053297064799165923}
-  health: 20
-  attack: 10
-  defense: 5
-  movementRange: 4
-  standingOnTile: {fileID: 0}
-  TurnReady: 1
 --- !u!95 &7053297064799165923
 Animator:
   serializedVersion: 5
@@ -161,6 +140,27 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1082802793126658538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7447933458573026352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73ea2fb8bf54eba4ab773c6286338e5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UnitName: Spearman
+  Faction: 0
+  anim: {fileID: 0}
+  health: 30
+  attack: 20
+  defense: 10
+  movementRange: 3
+  standingOnTile: {fileID: 0}
+  TurnReady: 0
 --- !u!1 &7549572504786820491
 GameObject:
   m_ObjectHideFlags: 0

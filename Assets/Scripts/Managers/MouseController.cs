@@ -9,8 +9,8 @@ namespace Terra
     {
         public GameObject cursor;
         public float speed;
-        public GameObject characterPrefab;
-        private BaseUnit character;
+        
+        public BaseUnit character;
 
         private PathFinder pathFinder;
         private RangeFinder rangeFinder;
@@ -18,6 +18,14 @@ namespace Terra
         private List<OverlayTile> path;
         private List<OverlayTile> rangeFinderTiles;
         private bool isMoving;
+
+        private int turnsEnded;
+
+        public static MouseController Instance;        
+
+        private void Awake(){
+            Instance = this;
+        }
 
         private void Start()
         {
@@ -41,7 +49,7 @@ namespace Terra
                 cursor.transform.position = tile.transform.position;
                 cursor.gameObject.GetComponent<SpriteRenderer>().sortingOrder = tile.transform.GetComponent<SpriteRenderer>().sortingOrder +1;
 
-                if (rangeFinderTiles.Contains(tile) && !isMoving)
+                if (rangeFinderTiles.Contains(tile) && !isMoving && character != null)
                 {
                     path = pathFinder.FindPath(character.standingOnTile, tile, rangeFinderTiles);
 
@@ -59,6 +67,12 @@ namespace Terra
                         path[i].SetSprite(arrow);
                     }
                 }
+                else{
+                    foreach (var item in rangeFinderTiles)
+                    {
+                    GridManager.Instance.map[item.grid2DLocation].SetSprite(ArrowDirection.None);
+                    }
+                }
 
                 if (Input.GetMouseButtonDown(0))
                 {
@@ -66,9 +80,15 @@ namespace Terra
 
                     if (character == null)
                     {
-                        character = Instantiate(characterPrefab).GetComponent<BaseUnit>();
-                        PositionCharacterOnLine(tile);
-                        GetInRangeTiles();
+                        character = tile.OccupiedUnit.GetComponent<BaseUnit>();
+                        if(character.TurnReady == true){
+                            PositionCharacterOnLine(tile);
+                            GetInRangeTiles();
+                        }
+                        else{
+                            character = null;
+                        }
+
                     }
                     else
                     {
@@ -100,17 +120,29 @@ namespace Terra
 
             if (path.Count == 0)
             {
-                GetInRangeTiles();
+                //GetInRangeTiles();
                 isMoving = false;
+                character.TurnReady = false;
+                character.GetComponent<SpriteRenderer>().color = Color.gray;
+                character = null;
+                
+                turnsEnded += 1;
+                if(turnsEnded == UnitManager.Instance.instantiatedUnits.Count()){
+                    GameManager.Instance.ChangeState(GameState.EnemiesTurn);
+                    turnsEnded = 0;
+                }
             }
 
         }
+
+
 
         private void PositionCharacterOnLine(OverlayTile tile)
         {
             character.transform.position = new Vector3(tile.transform.position.x, tile.transform.position.y + 0.0001f, tile.transform.position.z);
             character.GetComponent<SpriteRenderer>().sortingOrder = tile.GetComponent<SpriteRenderer>().sortingOrder +1;
             character.standingOnTile = tile;
+            tile.OccupiedUnit = character;
         }
 
         private static RaycastHit2D? GetFocusedOnTile()
