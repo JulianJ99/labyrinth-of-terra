@@ -69,7 +69,7 @@ public class UnitManager : MonoBehaviour {
         foreach (BaseUnit unit in instantiatedUnits){
             unit.TurnReady = true;
             unit.GetComponent<SpriteRenderer>().color = Color.white;
-            Debug.Log(unit);
+           
         }  
         GameManager.Instance.ChangeState(GameState.HeroesTurn);
     }

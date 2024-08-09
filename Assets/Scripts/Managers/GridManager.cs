@@ -73,6 +73,12 @@ public class GridManager : MonoBehaviour {
                                     overlayTile.GetComponent<SpriteRenderer>().sortingOrder = tm.GetComponent<TilemapRenderer>().sortingOrder + 1;
                                     overlayTile.gameObject.GetComponent<OverlayTile>().gridLocation = new Vector3Int(x, y, z);
                                     overlayTile.name = $"Tile {x} {y}";
+                                    foreach(BaseUnit unit in UnitManager.Instance.instantiatedUnits){
+                                        if(overlayTile.transform.position == unit.transform.position){
+                                            Debug.Log("Overlap!");
+                                            overlayTile.gameObject.GetComponent<OverlayTile>().OccupiedUnit = unit;
+                                        }
+                                    }
                                     map.Add(new Vector2Int(x, y), overlayTile.gameObject.GetComponent<OverlayTile>());
                                     
                                 }
@@ -111,7 +117,7 @@ public class GridManager : MonoBehaviour {
     }
 
     public OverlayTile GetEnemySpawnTile(){
-        return map.Where(t => t.Key.x > _width / 2).OrderBy(t => Random.value).First().Value;
+        return map.Where(t => t.Key.x < _width / 2).OrderBy(t => Random.value).First().Value;
     }
 
     public Tile GetTileAtPosition(Vector2Int pos)

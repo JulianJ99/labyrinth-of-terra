@@ -28,7 +28,7 @@ namespace Terra
 
         public virtual void Init(int x, int y)
         {
-
+            
         }
 
         private void Update()
@@ -37,6 +37,7 @@ namespace Terra
             {
                 HideTile();
             }
+
         }
 
         public void HideTile()
