@@ -28,3 +28,5 @@ MonoBehaviour:
   weaponAffinities:
   - weapon: {fileID: 11400000, guid: bff9e4c58431a314ab413683e508efdc, type: 2}
     affinity: 75
+  classSkills:
+  - {fileID: 11400000, guid: 2cd9ee5986a04564f867219bbdc33d84, type: 2}

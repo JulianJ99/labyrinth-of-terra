@@ -1402,7 +1402,7 @@ MonoBehaviour:
   repairCostText: {fileID: 719690927}
   weaponSprite: {fileID: 1981403999}
   weaponInserted: 0
-  repairCost: 100
+  baseRepairCost: 100
 --- !u!1 &321244589
 GameObject:
   m_ObjectHideFlags: 0
@@ -1622,6 +1622,25 @@ MonoBehaviour:
   resMax: 14
   lckMin: 0
   lckMax: 15
+  traits:
+  - {fileID: 11400000, guid: d4110fed947717c4d96d3abeda4eec7a, type: 2}
+  - {fileID: 11400000, guid: 2a2aea201e70e084bb33a468747820c6, type: 2}
+  - {fileID: 11400000, guid: 9aa4dd329668a994eba63a30df25f196, type: 2}
+  - {fileID: 11400000, guid: 02690b4baa3777d4eb29fd7b630b1d4e, type: 2}
+  - {fileID: 11400000, guid: e59317148c0d8964ca40a46fa202b78e, type: 2}
+  - {fileID: 11400000, guid: d7dd3736341396a488f9839b07f4f7b8, type: 2}
+  - {fileID: 11400000, guid: 4a2c79788a6b39441862bc8af15edea6, type: 2}
+  - {fileID: 11400000, guid: 48666a328f7044049815829447ba7d72, type: 2}
+  - {fileID: 11400000, guid: 34fc17014b9232945b98627b40192fb5, type: 2}
+  - {fileID: 11400000, guid: 158ae4bf076800445918a375b097dba5, type: 2}
+  - {fileID: 11400000, guid: 353c0f108289beb49a7f2ddf7369d91d, type: 2}
+  - {fileID: 11400000, guid: b597ac9875ce43545a305fa2e5215936, type: 2}
+  - {fileID: 11400000, guid: d3eb7313224013d479efb8a4b991c03d, type: 2}
+  - {fileID: 11400000, guid: dff36bcc028372644a61f5360b138d9b, type: 2}
+  - {fileID: 11400000, guid: 46da7296f5a375e44a8f9d7d83b63e34, type: 2}
+  - {fileID: 11400000, guid: bd4d349b594c7d948a6929f781faa44a, type: 2}
+  - {fileID: 11400000, guid: 88d58c065a1c17b4fa5b42f47e98f098, type: 2}
+  randomChance: 0.15
   minCost: 80
   maxCost: 250
 --- !u!1 &403787073

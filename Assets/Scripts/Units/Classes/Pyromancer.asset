@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 43e5cbfef3c5c46418fae21d0a487e8b, type: 3}
-  m_Name: Alchemist
+  m_Name: Pyromancer
   m_EditorClassIdentifier: 
-  className: Alchemist
+  className: Pyromancer
   classSprite: {fileID: 21300000, guid: dffea97634a60db478981433ffaa29cb, type: 3}
   classWeapon: {fileID: 8957720132813694147, guid: 5018eca40c41965479df6d31f8d1feca, type: 3}
   hpvPrio: 0.318
@@ -28,3 +28,5 @@ MonoBehaviour:
   weaponAffinities:
   - weapon: {fileID: 11400000, guid: 24e0f371f879d4a47a4661be87364504, type: 2}
     affinity: 75
+  classSkills:
+  - {fileID: 11400000, guid: f9dba3f59dc0fd846b572b8bb71cff37, type: 2}

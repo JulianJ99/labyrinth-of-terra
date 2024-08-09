@@ -71,4 +71,10 @@ public class CharacterClasses : MonoBehaviour
         inven.AddToInventory(weaponToAdd);
         weaponToAdd.transform.parent = transform;
     }
+
+    public void SetSkills()
+    {
+        SkillManager skills = GetComponent<SkillManager>();
+        skills.AddSkill(currentClass.classSkills[0]);
+    }
 }

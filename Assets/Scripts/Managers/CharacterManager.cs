@@ -33,6 +33,10 @@ public class CharacterManager : MonoBehaviour
     public int resMin, resMax;
     public int lckMin, lckMax;
 
+    [Header("Traits")]
+    public List<Traits> traits = new List<Traits>();
+    public float randomChance = 0.15f;
+
     [Header("Resources")]
     public int minCost, maxCost;
 
@@ -53,6 +57,9 @@ public class CharacterManager : MonoBehaviour
             classManager.ChangeCharacter();
             classManager.AssignAffinities();
             classManager.GiveWeapon();
+            classManager.SetSkills();
+
+            RandomizeTraits(HeroPrefab);
 
             currentImage = HeroPrefab.GetComponent<SpriteRenderer>().sprite;
             RandomizeValues();
@@ -111,5 +118,15 @@ public class CharacterManager : MonoBehaviour
         float randomValue = UnityEngine.Random.Range(minValue, maxValue);
         float biasNumber = Mathf.Lerp(minValue, maxValue, biasValue);
         return Mathf.RoundToInt((randomValue + biasNumber) / 2);
+    }
+
+    private void RandomizeTraits(GameObject currentCharacter)
+    {
+        TraitManager manager = currentCharacter.GetComponent<TraitManager>();
+        if(UnityEngine.Random.value < randomChance)
+        {
+            int randomValue = UnityEngine.Random.Range(0, traits.Count);
+            manager.AddTrait(traits[randomValue]);
+        }
     }
 }
