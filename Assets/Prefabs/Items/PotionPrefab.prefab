@@ -97,3 +97,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ff506800be88a849bcceeba5c487dbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemRef: {fileID: 11400000, guid: 4328989685ee6e94e94de1da99fb8e24, type: 2}
+  uses: 0
+  healingValue: 0

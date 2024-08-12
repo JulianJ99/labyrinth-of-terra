@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87578bd3e72937b4ea074293975ae524, type: 3}
   m_Name: Quickstudy
   m_EditorClassIdentifier: 
-  SkillName: 
-  Effect: 
-  EffectNumber: 0
-  StatToEffect: 
-  SkillActive: 0
-  isPurchaseable: 0
-  SkillRarity: 
+  SkillName: Quick Study
+  Effect: 1.5 Experience gain
+  EffectNumber: 2
+  StatToEffect: Experience
+  SkillActive: 1
+  isPurchaseable: 1
+  SkillRarity: Legendary

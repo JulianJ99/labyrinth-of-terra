@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87578bd3e72937b4ea074293975ae524, type: 3}
   m_Name: Touchthesky
   m_EditorClassIdentifier: 
-  SkillName: 
-  Effect: 
-  EffectNumber: 0
-  StatToEffect: 
-  SkillActive: 0
-  isPurchaseable: 0
-  SkillRarity: 
+  SkillName: Touch the Sky
+  Effect: Buff all growths by 20%
+  EffectNumber: 20
+  StatToEffect: Growths
+  SkillActive: 1
+  isPurchaseable: 1
+  SkillRarity: Divine

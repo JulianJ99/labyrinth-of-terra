@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87578bd3e72937b4ea074293975ae524, type: 3}
   m_Name: Sturdystance
   m_EditorClassIdentifier: 
-  SkillName: 
-  Effect: 
-  EffectNumber: 0
-  StatToEffect: 
+  SkillName: Sturdy Stance
+  Effect: -3 Damage if enemy doubles on their phase
+  EffectNumber: 3
+  StatToEffect: Damage
   SkillActive: 0
-  isPurchaseable: 0
-  SkillRarity: 
+  isPurchaseable: 1
+  SkillRarity: Epic

@@ -28,4 +28,14 @@ public class ItemManager : MonoBehaviour
         uses = itemRef.itemUses;
         healingValue = itemRef.itemHeal;
     }
+
+    public void UseItem()
+    {
+        --uses;
+
+        if(uses == 0)
+        {
+            Destroy(gameObject);
+        }
+    }
 }

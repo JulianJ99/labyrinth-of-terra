@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87578bd3e72937b4ea074293975ae524, type: 3}
   m_Name: Eternalflame
   m_EditorClassIdentifier: 
-  SkillName: 
-  Effect: 
-  EffectNumber: 0
-  StatToEffect: 
+  SkillName: Eternal Flame
+  Effect: +20 hit/avoid if below 25% health
+  EffectNumber: 20
+  StatToEffect: Dexterity
   SkillActive: 0
-  isPurchaseable: 0
-  SkillRarity: 
+  isPurchaseable: 1
+  SkillRarity: Epic

@@ -9,13 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 87578bd3e72937b4ea074293975ae524, type: 3}
-  m_Name: Assassinate
+  m_Script: {fileID: 11500000, guid: 26a84158edb5fc74ca460d223de85645, type: 3}
+  m_Name: SkillbookDivine
   m_EditorClassIdentifier: 
-  SkillName: Assassinate
-  Effect: On 1 tile range +3 damage and immediate attack if doubles
-  EffectNumber: 3
-  StatToEffect: Damage
-  SkillActive: 0
-  isPurchaseable: 1
-  SkillRarity: Divine
+  itemName: SkillbookDivine
+  itemSprite: {fileID: 21300000, guid: 19531269ed700794ea9589908892a6c9, type: 3}
+  itemType: Skillbook
+  attachedSkill: {fileID: 0}
+  itemUses: 1
+  itemHeal: 0

@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87578bd3e72937b4ea074293975ae524, type: 3}
   m_Name: Livingontheedge
   m_EditorClassIdentifier: 
-  SkillName: 
-  Effect: 
-  EffectNumber: 0
-  StatToEffect: 
+  SkillName: Living on the Edge
+  Effect: +25% damage given and received below 25% health
+  EffectNumber: 25
+  StatToEffect: Damage
   SkillActive: 0
-  isPurchaseable: 0
-  SkillRarity: 
+  isPurchaseable: 1
+  SkillRarity: Epic

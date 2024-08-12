@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87578bd3e72937b4ea074293975ae524, type: 3}
   m_Name: Pincerattack
   m_EditorClassIdentifier: 
-  SkillName: 
-  Effect: 
-  EffectNumber: 0
-  StatToEffect: 
+  SkillName: Pincer Attack
+  Effect: If unit initiates combat with ally standing behind the target, double attack
+  EffectNumber: 2
+  StatToEffect: Amount of attacks
   SkillActive: 0
-  isPurchaseable: 0
-  SkillRarity: 
+  isPurchaseable: 1
+  SkillRarity: Legendary

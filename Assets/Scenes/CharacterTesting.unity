@@ -3620,13 +3620,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 886774070}
+  - component: {fileID: 886774071}
   m_Layer: 5
   m_Name: ArcanistView
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &886774070
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3647,6 +3648,62 @@ RectTransform:
   m_AnchoredPosition: {x: -7.2, y: -2.8}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &886774071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 886774069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7012fb66357d25d41bfeb4ed23420292, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rareSkills:
+  - {fileID: 11400000, guid: c57f153b8a727ae4d8289fbd6492d56b, type: 2}
+  - {fileID: 11400000, guid: 663cd82d0b957b145aa7286e6c3e02e8, type: 2}
+  - {fileID: 11400000, guid: 5229dff79fc2d1049a476cc5f6455ba2, type: 2}
+  - {fileID: 11400000, guid: d7de971d3453cfd46b4c61d391b66157, type: 2}
+  - {fileID: 11400000, guid: 708315871582b7b4caa5893c9de22441, type: 2}
+  - {fileID: 11400000, guid: 7baeefdadb9326640917a54e392a45cd, type: 2}
+  - {fileID: 11400000, guid: 404a6c3797abf3a46aec07c90f666c0a, type: 2}
+  - {fileID: 11400000, guid: 54ed5327effd342449f5e9064973621a, type: 2}
+  - {fileID: 11400000, guid: 37e9a765741caa24387cae3107e1c6bc, type: 2}
+  - {fileID: 11400000, guid: b7ea539059407244a846b7dc6a5450a7, type: 2}
+  - {fileID: 11400000, guid: f9746708d33ce284a80943776fd4b97b, type: 2}
+  - {fileID: 11400000, guid: a4af6a4a87b82b44694aa5a7d571eb19, type: 2}
+  - {fileID: 11400000, guid: a4d47bfdcc560a546976022af2f9f44a, type: 2}
+  - {fileID: 11400000, guid: 63c47028ed222124ab7bc2bc9a065ebe, type: 2}
+  - {fileID: 11400000, guid: a4cd308109730b346b7fa7f422377c52, type: 2}
+  - {fileID: 11400000, guid: a087fef4b0d9f934fb42515ae05c194c, type: 2}
+  epicSkills:
+  - {fileID: 11400000, guid: 476af5aa3b49aa3478d53cf401e31990, type: 2}
+  - {fileID: 11400000, guid: 7db60d54544e5ff4da34e35895451da3, type: 2}
+  - {fileID: 11400000, guid: ee4549a7441b998468fb4d700c9eb7b5, type: 2}
+  - {fileID: 11400000, guid: 9841b3faa8748d04f94e109ec56a47d6, type: 2}
+  - {fileID: 11400000, guid: 27ce2c148a9381e45996d41d6b54de3f, type: 2}
+  - {fileID: 11400000, guid: a3a344074cae0754580ab9ab1a80cb46, type: 2}
+  - {fileID: 11400000, guid: 4b183c98dd95b33439da47085bb432c6, type: 2}
+  - {fileID: 11400000, guid: de3517d73e9e63a4d906f3c6b9b97455, type: 2}
+  - {fileID: 11400000, guid: b3012b17e6588344a8eb0732681ef673, type: 2}
+  legendarySkills:
+  - {fileID: 11400000, guid: a778d76b649e7194e815022b684fa09d, type: 2}
+  - {fileID: 11400000, guid: 4e8fce6957eb4304e8a89e43b7e7072f, type: 2}
+  - {fileID: 11400000, guid: 600f7b1e21c2bd541b3d9479d54f1627, type: 2}
+  - {fileID: 11400000, guid: 803dbb2f34b73dc4780487bf7e9350d0, type: 2}
+  - {fileID: 11400000, guid: 05f1ad06b925c3e4d912310b19770ec6, type: 2}
+  - {fileID: 11400000, guid: bb2cb5009ef527e419257c282dfd44ba, type: 2}
+  - {fileID: 11400000, guid: 7c4a900564f1ed44fb4315bfdc5d39e5, type: 2}
+  - {fileID: 11400000, guid: 6c2c324999c78f448b641700ebcbbded, type: 2}
+  divineSkills:
+  - {fileID: 11400000, guid: dae9feb8156a50e4b8f4075db64509a0, type: 2}
+  - {fileID: 11400000, guid: d6ad0d601c88dea44a00354557d9a688, type: 2}
+  - {fileID: 11400000, guid: 36735db556e09034eabe2fc1e8efc698, type: 2}
+  - {fileID: 11400000, guid: 1d6c9409eafc6af409f3ac6354ab6bd3, type: 2}
+  - {fileID: 11400000, guid: 1e295d1e0cefb274eaf5e4e13bb796af, type: 2}
+  - {fileID: 11400000, guid: 554f918f0cf0d014ea2678b0c37a2929, type: 2}
+  allSkills: []
 --- !u!1 &892825334
 GameObject:
   m_ObjectHideFlags: 0
@@ -4251,7 +4308,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &978176470
 RectTransform:
   m_ObjectHideFlags: 0

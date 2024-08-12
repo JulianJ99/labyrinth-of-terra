@@ -7,6 +7,9 @@ public class Items : ScriptableObject
 {
     public string itemName;
     public Sprite itemSprite;
+    public string itemType;
+
+    public Skills attachedSkill;
 
     public int itemUses;
     public float itemHeal;

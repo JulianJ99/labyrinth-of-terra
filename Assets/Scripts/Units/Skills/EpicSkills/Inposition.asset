@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87578bd3e72937b4ea074293975ae524, type: 3}
   m_Name: Inposition
   m_EditorClassIdentifier: 
-  SkillName: 
-  Effect: 
-  EffectNumber: 0
-  StatToEffect: 
+  SkillName: In Position
+  Effect: +10 crit on tiles that give avoid
+  EffectNumber: 10
+  StatToEffect: Luck
   SkillActive: 0
-  isPurchaseable: 0
-  SkillRarity: 
+  isPurchaseable: 1
+  SkillRarity: Epic

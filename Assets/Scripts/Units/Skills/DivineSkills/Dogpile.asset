@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87578bd3e72937b4ea074293975ae524, type: 3}
   m_Name: Dogpile
   m_EditorClassIdentifier: 
-  SkillName: 
-  Effect: 
+  SkillName: Dogpile
+  Effect: All units in target range attack engaged unit
   EffectNumber: 0
   StatToEffect: 
   SkillActive: 0
-  isPurchaseable: 0
-  SkillRarity: 
+  isPurchaseable: 1
+  SkillRarity: Divine
