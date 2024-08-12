@@ -11,6 +11,10 @@ public class Skills : ScriptableObject
     public string StatToEffect;
 
     public bool SkillActive;
+
+    [Header("Purchaseable skills")]
+    public bool isPurchaseable;
+    public string SkillRarity;
 }
 
 
