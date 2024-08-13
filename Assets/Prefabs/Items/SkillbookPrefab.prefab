@@ -97,6 +97,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ff506800be88a849bcceeba5c487dbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemRef: {fileID: 11400000, guid: 0426b9fbbed85214e8c353375c8be607, type: 2}
+  itemReferences:
+  - {fileID: 11400000, guid: 0426b9fbbed85214e8c353375c8be607, type: 2}
+  - {fileID: 11400000, guid: c55afa40db146e94f8515fed9d8ce90b, type: 2}
+  - {fileID: 11400000, guid: 4d5a7ad2c2f67ee44955345acdbe94fd, type: 2}
+  - {fileID: 11400000, guid: febb9b26db990264a80d48ad8f49b54b, type: 2}
+  itemRef: {fileID: 0}
+  attachedSkill: {fileID: 0}
+  itemType: Skillbook
   uses: 0
   healingValue: 0
