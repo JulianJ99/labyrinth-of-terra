@@ -28,9 +28,9 @@ public class UnitManager : MonoBehaviour {
 
         for (int i = 0; i < heroCount; i++) {
             var randomPrefab = GetRandomUnit<BaseHero>(Faction.Hero);
-            Debug.Log(randomPrefab);
+            
             var spawnedHero = Instantiate(randomPrefab);
-            Debug.Log(spawnedHero);
+            
             var randomSpawnTile = GridManager.Instance.GetHeroSpawnTile();
             Debug.Log(randomSpawnTile);
             randomSpawnTile.SetUnit(spawnedHero);

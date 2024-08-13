@@ -63,7 +63,10 @@ public class GridManager : MonoBehaviour {
                             
                             if (tm.HasTile(new Vector3Int(x, y, z)))
                             {
-                                
+                                if (tm.GetTile(new Vector3Int(x, y, z)) == _mountainTile){
+
+                                }
+                                else{
                                 if (!map.ContainsKey(new Vector2Int(x, y)))
                                 {
                                     
@@ -77,11 +80,15 @@ public class GridManager : MonoBehaviour {
                                         if(overlayTile.transform.position == unit.transform.position){
                                             Debug.Log("Overlap!");
                                             overlayTile.gameObject.GetComponent<OverlayTile>().OccupiedUnit = unit;
+                                            overlayTile.gameObject.GetComponent<OverlayTile>().isBlocked = true;
                                         }
                                     }
+                                    //Spawn tiles
                                     map.Add(new Vector2Int(x, y), overlayTile.gameObject.GetComponent<OverlayTile>());
                                     
                                 }
+                                }
+
                             }
                         }
                     }
@@ -98,6 +105,15 @@ public class GridManager : MonoBehaviour {
         {
             for (int y = 0; y < _height; y++) {
                 var randomTile = Random.Range(0, 6) == 3 ? _mountainTile : _grassTile;
+                foreach(BaseUnit unit in UnitManager.Instance.instantiatedUnits){
+                    
+                    Vector3 check = new Vector3(x + 0.5f, y + 0.5f, 1);
+                    
+                    if(check == unit.transform.position){
+                        randomTile = _grassTile;
+                        Debug.Log("Your ass is grass" + unit.transform.position);
+                    }
+                }
                 TileBase spawnedTile = randomTile;
                 
                 Vector3Int p = new Vector3Int(x, y, 0);
@@ -112,7 +128,8 @@ public class GridManager : MonoBehaviour {
         GameManager.Instance.ChangeState(GameState.SpawnHeroes);
     }
 
-    public OverlayTile GetHeroSpawnTile() {             
+    public OverlayTile GetHeroSpawnTile() {    
+                
         return map.Where(t => t.Key.x > _width / 2).OrderBy(t => Random.value).First().Value;
     }
 

@@ -30,22 +30,27 @@ public class GameManager : MonoBehaviour
                 
                 break;
             case GameState.SpawnHeroes:
-                
-                //UnitManager.Instance.SpawnHeroes();
+
+                UnitManager.Instance.SpawnHeroes();
                 break;
+
             case GameState.SpawnEnemies:
                 //UnitManager.Instance.SpawnEnemies();
                 break;
+
             case GameState.HeroesTurn:
                 Debug.Log("Heroes turn!");
                 break;
+
             case GameState.EnemiesTurn:
                 Debug.Log("Enemies turn!");
                 Instance.ChangeState(GameState.TurnReset);
                 break;
+
             case GameState.TurnReset:
                 UnitManager.Instance.TurnReset();
-                break;               
+                break;      
+                         
             default:
                 throw new ArgumentOutOfRangeException(nameof(newState), newState, null);
         }

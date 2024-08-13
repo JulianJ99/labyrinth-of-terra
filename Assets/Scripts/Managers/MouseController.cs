@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 using static Terra.ArrowTranslator;
+using UnityEditor.Overlays;
 
 namespace Terra
 {
@@ -107,7 +108,7 @@ namespace Terra
         private void MoveAlongPath()
         {
             var step = speed * Time.deltaTime;
-
+            
             float zIndex = path[0].transform.position.z;
             character.transform.position = Vector2.MoveTowards(character.transform.position, path[0].transform.position, step);
             character.transform.position = new Vector3(character.transform.position.x, character.transform.position.y, zIndex);
@@ -120,10 +121,21 @@ namespace Terra
 
             if (path.Count == 0)
             {
-                //GetInRangeTiles();
+                
                 isMoving = false;
                 character.TurnReady = false;
                 character.GetComponent<SpriteRenderer>().color = Color.gray;
+                
+                foreach(OverlayTile tile in rangeFinderTiles){
+                    if(tile.OccupiedUnit != null){
+                        if(tile.OccupiedUnit.GetComponent<BaseUnit>() == character && tile.transform.position != character.transform.position ){
+                            Debug.Log(character.transform.position);
+                            Debug.Log("Reset " + tile.transform.position);
+                            tile.OccupiedUnit = null;
+                            tile.isBlocked = false;
+                        }
+                    }
+                }
                 character = null;
                 
                 turnsEnded += 1;
@@ -139,10 +151,11 @@ namespace Terra
 
         private void PositionCharacterOnLine(OverlayTile tile)
         {
-            character.transform.position = new Vector3(tile.transform.position.x, tile.transform.position.y + 0.0001f, tile.transform.position.z);
+            character.transform.position = new Vector3(tile.transform.position.x, tile.transform.position.y, tile.transform.position.z);
             character.GetComponent<SpriteRenderer>().sortingOrder = tile.GetComponent<SpriteRenderer>().sortingOrder +1;
             character.standingOnTile = tile;
             tile.OccupiedUnit = character;
+            tile.isBlocked = true;
         }
 
         private static RaycastHit2D? GetFocusedOnTile()
