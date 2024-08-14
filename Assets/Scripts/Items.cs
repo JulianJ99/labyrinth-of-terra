@@ -12,6 +12,6 @@ public class Items : ScriptableObject
     public Skills attachedSkill;
 
     public int itemUses;
-    public float itemHeal;
+    public int itemHeal;
 
 }

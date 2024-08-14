@@ -13,6 +13,7 @@ public class BaseUnit : MonoBehaviour {
     public Animator anim; 
 
     [SerializeField] public int health;
+    public int currentHealth;
 
     [SerializeField] public int attack;
 
@@ -66,7 +67,7 @@ public class BaseUnit : MonoBehaviour {
 
     void Start(){
         originalMovePoint.position = movePoint.position;
-        
+        currentHealth = health;
     }
 
     public void CharacterMovement(){
@@ -153,5 +154,13 @@ public class BaseUnit : MonoBehaviour {
             }
             
         
+    }
+    public void HealUnit(int amount)
+    {
+        currentHealth += amount;
+        if(currentHealth > health)
+        {
+            currentHealth = health;
+        }
     }
 }

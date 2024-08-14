@@ -13,7 +13,7 @@ public class ItemManager : MonoBehaviour
     public string itemType;
 
     public int uses;
-    public float healingValue;
+    public int healingValue;
 
     private SpriteRenderer spriteRenderer;
     // Start is called before the first frame update
@@ -34,32 +34,37 @@ public class ItemManager : MonoBehaviour
             uses = itemRef.itemUses;
             healingValue = itemRef.itemHeal;
         }
+        else
+        {
+            print("No ref");
+        }
     }
 
-    public void UseItem()
+    public void UseItem(GameObject character)
     {
-        --uses;
-
-        if(uses == 0)
-        {
-            Destroy(gameObject);
-        }
-
         if(itemType == "Potion")
         {
-
+            Hero1 unit = character.GetComponent<Hero1>();
+            unit.HealUnit(healingValue);
         }
 
         if(itemType == "Skillbook")
         {
+            SkillManager skills = character.GetComponent<SkillManager>();
+            skills.AddSkill(attachedSkill);
+        }
 
+        --uses;
+
+        if (uses == 0)
+        {
+            Destroy(gameObject);
         }
     }
 
     public void SetReference(Skills skill)
     {
         attachedSkill = skill;
-        print(attachedSkill);
 
         if(skill.SkillRarity == "Rare")
         {
@@ -77,7 +82,5 @@ public class ItemManager : MonoBehaviour
         {
             itemRef = itemReferences[3];
         }
-
-        //SetItem();
     }
 }

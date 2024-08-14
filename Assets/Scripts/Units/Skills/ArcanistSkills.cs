@@ -122,7 +122,6 @@ public class ArcanistSkills : MonoBehaviour
         if(myMoney >= cost)
         {
             manager.SubtractValue(cost);
-            print(cost);
             button.interactable = false;
             inventory.AddToConvoy(skillBook);
         }
