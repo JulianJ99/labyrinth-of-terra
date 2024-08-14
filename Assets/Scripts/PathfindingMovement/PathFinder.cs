@@ -48,9 +48,9 @@ namespace Terra
                         continue;
                     }
 
+                    
                     tile.G = GetManhattenDistance(start, tile);
                     tile.H = GetManhattenDistance(end, tile);
-
                     tile.Previous = currentOverlayTile;
 
 
@@ -71,7 +71,10 @@ namespace Terra
 
             while (currentTile != start)
             {
-                finishedList.Add(currentTile);
+                if(currentTile.isOccupied == false){
+                    finishedList.Add(currentTile);
+                }
+                
                 currentTile = currentTile.Previous;
             }
 

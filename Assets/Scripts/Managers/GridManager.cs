@@ -80,7 +80,7 @@ public class GridManager : MonoBehaviour {
                                         if(overlayTile.transform.position == unit.transform.position){
                                             Debug.Log("Overlap!");
                                             overlayTile.gameObject.GetComponent<OverlayTile>().OccupiedUnit = unit;
-                                            overlayTile.gameObject.GetComponent<OverlayTile>().isBlocked = true;
+                                            overlayTile.gameObject.GetComponent<OverlayTile>().isOccupied = true;
                                         }
                                     }
                                     //Spawn tiles

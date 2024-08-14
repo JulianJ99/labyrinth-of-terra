@@ -18,7 +18,7 @@ namespace Terra
         private ArrowTranslator arrowTranslator;
         private List<OverlayTile> path;
         private List<OverlayTile> rangeFinderTiles;
-        private bool isMoving;
+        [SerializeField] private bool isMoving;
 
         private int turnsEnded;
 
@@ -77,6 +77,7 @@ namespace Terra
 
                 if (Input.GetMouseButtonDown(0))
                 {
+                    
                     tile.ShowTile();
 
                     if (character == null)
@@ -112,9 +113,10 @@ namespace Terra
             float zIndex = path[0].transform.position.z;
             character.transform.position = Vector2.MoveTowards(character.transform.position, path[0].transform.position, step);
             character.transform.position = new Vector3(character.transform.position.x, character.transform.position.y, zIndex);
-
+            
             if (Vector2.Distance(character.transform.position, path[0].transform.position) < 0.00001f)
             {
+                
                 PositionCharacterOnLine(path[0]);
                 path.RemoveAt(0);
             }
@@ -132,7 +134,7 @@ namespace Terra
                             Debug.Log(character.transform.position);
                             Debug.Log("Reset " + tile.transform.position);
                             tile.OccupiedUnit = null;
-                            tile.isBlocked = false;
+                            tile.isOccupied = false;
                         }
                     }
                 }
@@ -155,7 +157,7 @@ namespace Terra
             character.GetComponent<SpriteRenderer>().sortingOrder = tile.GetComponent<SpriteRenderer>().sortingOrder +1;
             character.standingOnTile = tile;
             tile.OccupiedUnit = character;
-            tile.isBlocked = true;
+            tile.isOccupied = true;
         }
 
         private static RaycastHit2D? GetFocusedOnTile()
