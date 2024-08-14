@@ -33,7 +33,6 @@ public class ArcanistSkills : MonoBehaviour
     private float divineChance = 0.05f;
 
     private int minCost, maxCost;
-    private int itemCost;
     // Start is called before the first frame update
     private void OnEnable()
     {
@@ -53,10 +52,10 @@ public class ArcanistSkills : MonoBehaviour
             currentSkill = SelectRandomSkill();
             itemM.SetReference(currentSkill);
 
-            itemCost = UnityEngine.Random.Range(minCost, maxCost);
+            int itemValue = UnityEngine.Random.Range(minCost, maxCost);
 
-            SelectUI(itemM);
-            SetButton(createdSkill);
+            SelectUI(itemM, itemValue);
+            SetButton(createdSkill, itemValue);
 
             currentIndex++;
         }
@@ -100,7 +99,7 @@ public class ArcanistSkills : MonoBehaviour
         }
     }
 
-    private void SelectUI(ItemManager item)
+    private void SelectUI(ItemManager item, int cost)
     {
         TMP_Text[] texts = uiSpaces[currentIndex].GetComponentsInChildren<TMP_Text>();
         Image spriteImage = uiSpaces[currentIndex].GetComponentInChildren<Image>();
@@ -108,22 +107,22 @@ public class ArcanistSkills : MonoBehaviour
         spriteImage.sprite = item.itemRef.itemSprite;
         texts[0].text = item.attachedSkill.SkillName;
         texts[1].text = item.attachedSkill.SkillRarity;
-        texts[2].text = itemCost.ToString();
+        texts[2].text = cost.ToString();
     }
-    private void SetButton(GameObject skillBook)
+    private void SetButton(GameObject skillBook, int cost)
     {
         Button button = uiSpaces[currentIndex].GetComponentInChildren<Button>();
-        button.onClick.AddListener(() => BuySkill(skillBook, button, itemCost));
+        button.onClick.AddListener(() => BuySkill(skillBook, button, cost));
     }
 
-    public void BuySkill(GameObject skillBook, Button button, int amount)
+    public void BuySkill(GameObject skillBook, Button button, int cost)
     {
         int myMoney = manager.CheckCurrent();
-        print(amount);
 
-        if(myMoney > amount)
+        if(myMoney >= cost)
         {
-            manager.SubtractValue(amount);
+            manager.SubtractValue(cost);
+            print(cost);
             button.interactable = false;
             inventory.AddToConvoy(skillBook);
         }
