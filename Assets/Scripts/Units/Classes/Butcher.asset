@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43e5cbfef3c5c46418fae21d0a487e8b, type: 3}
+  m_Name: Butcher
+  m_EditorClassIdentifier: 
+  className: Butcher
+  classSprite: {fileID: 21300000, guid: dffea97634a60db478981433ffaa29cb, type: 3}
+  classWeapon: {fileID: 8957720132813694147, guid: 55ea756a3236701488ff3c5a5699e837, type: 3}
+  hpvPrio: 0.697
+  atkPrio: 0.294
+  defPrio: 0.269
+  movPrio: 0.104
+  strPrio: 0.517
+  magPrio: 0.109
+  dexPrio: 0.408
+  spdPrio: 0.582
+  resPrio: 0.423
+  lckPrio: 0.577
+  weaponAffinities:
+  - weapon: {fileID: 11400000, guid: 1815c7d1016fafb4ab1521113276d497, type: 2}
+    affinity: 75
+  classSkills:
+  - {fileID: 11400000, guid: 980d71c4c71591e40a435bb9862b77e1, type: 2}

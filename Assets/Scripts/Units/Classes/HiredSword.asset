@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43e5cbfef3c5c46418fae21d0a487e8b, type: 3}
+  m_Name: HiredSword
+  m_EditorClassIdentifier: 
+  className: Hired Sword
+  classSprite: {fileID: 21300000, guid: 01ed21b4c381dfa4e8f92ef52b6d2842, type: 3}
+  classWeapon: {fileID: 8957720132813694147, guid: 30e00107da0112549bd093393bf071c6, type: 3}
+  hpvPrio: 0.552
+  atkPrio: 0.592
+  defPrio: 0.398
+  movPrio: 0.522
+  strPrio: 0.701
+  magPrio: 0.05
+  dexPrio: 0.607
+  spdPrio: 0.592
+  resPrio: 0.219
+  lckPrio: 0.313
+  weaponAffinities:
+  - weapon: {fileID: 11400000, guid: dd61ab2e13ae7cd42aaa0697c9c010f5, type: 2}
+    affinity: 75
+  classSkills:
+  - {fileID: 11400000, guid: a92878eeab89a0a428975a1af9abc5cd, type: 2}

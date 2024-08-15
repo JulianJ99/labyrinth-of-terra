@@ -43,6 +43,10 @@ GameObject:
   - component: {fileID: 4544352022378276768}
   - component: {fileID: 649486644376742752}
   - component: {fileID: 7053297064799165923}
+  - component: {fileID: -1022223499073736981}
+  - component: {fileID: 6566385728216124623}
+  - component: {fileID: 3444153805283627309}
+  - component: {fileID: 5849756323331714062}
   m_Layer: 0
   m_Name: Hero1
   m_TagString: Untagged
@@ -131,15 +135,46 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff4f46c86037cb64ebe0eea97aedf002, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UnitName: Bounty Hunter
+  UnitName: Bounty
+  OccupiedTile: {fileID: 0}
   Faction: 0
   anim: {fileID: 7053297064799165923}
   health: 20
   attack: 10
   defense: 5
-  movementRange: 4
   standingOnTile: {fileID: 0}
   TurnReady: 1
+  movementRange: 4
+  moveSpeed: 10
+  className: 
+  strength: 0
+  magic: 0
+  dexterity: 0
+  speed: 0
+  resistance: 0
+  luck: 0
+  cost: 0
+  weaponsAffinities: []
+  currentLevel: 1
+  expAmount: 0
+  hpvPrio: 0
+  atkPrio: 0
+  defPrio: 0
+  movPrio: 0
+  strPrio: 0
+  magPrio: 0
+  dexPrio: 0
+  spdPrio: 0
+  resPrio: 0
+  lckPrio: 0
+  whatStopsMovement:
+    serializedVersion: 2
+    m_Bits: 64
+  lastAxis: 0
+  isMoving: 0
+  firstPerMove: 0
+  originalMovePoint: {fileID: 7330201521234398678}
+  originalMovement: 0
 --- !u!95 &7053297064799165923
 Animator:
   serializedVersion: 5
@@ -161,6 +196,77 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-1022223499073736981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7447933458573026352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b98368d5e58e4a4bbe5828c538ebb02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  classes:
+  - {fileID: 11400000, guid: f727a4d6440356f488eaec99b2f46533, type: 2}
+  - {fileID: 11400000, guid: 737d58c156e71cd4898777fae130c5e5, type: 2}
+  - {fileID: 11400000, guid: f9d8e44694f74a44caae010a788c0cac, type: 2}
+  - {fileID: 11400000, guid: ed2ce136218a9334c996d60c07938c71, type: 2}
+  - {fileID: 11400000, guid: 8375ed6820a7e5645b6af2c273e0dcfa, type: 2}
+  - {fileID: 11400000, guid: 9afe4d079cdb2624cb3803a44feac232, type: 2}
+  - {fileID: 11400000, guid: 279bb59c18ef51d49a041e9f2b732b2f, type: 2}
+  - {fileID: 11400000, guid: 867128c21390321439f1bad5d4ff3ca7, type: 2}
+  - {fileID: 11400000, guid: 4f762fd3dfdf56242be8a9a47e17c47d, type: 2}
+  allWeapons:
+  - {fileID: 11400000, guid: bff9e4c58431a314ab413683e508efdc, type: 2}
+  - {fileID: 11400000, guid: 375cb700981de9f42a3dfd1cef8fd4f6, type: 2}
+  - {fileID: 11400000, guid: fcd542aa98949c64a81df19c458d8a94, type: 2}
+  - {fileID: 11400000, guid: 24e0f371f879d4a47a4661be87364504, type: 2}
+  - {fileID: 11400000, guid: b406c09199970f44e8b4f60fb91768f5, type: 2}
+  - {fileID: 11400000, guid: 1815c7d1016fafb4ab1521113276d497, type: 2}
+  - {fileID: 11400000, guid: c2a428f598b098145b9b01e381b0bb7f, type: 2}
+  - {fileID: 11400000, guid: 259f38dd3b86c6049b135fb6617b1e8a, type: 2}
+  - {fileID: 11400000, guid: dd61ab2e13ae7cd42aaa0697c9c010f5, type: 2}
+--- !u!114 &6566385728216124623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7447933458573026352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 951abf2176d7ff8488fb2901103a1a0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventory: []
+  inventorySpace: 6
+--- !u!114 &3444153805283627309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7447933458573026352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c93aa1b0082ac8b459a0c5fe029372aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skills: []
+--- !u!114 &5849756323331714062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7447933458573026352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9100c5484fe0f7342b85a1513339a23d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7549572504786820491
 GameObject:
   m_ObjectHideFlags: 0

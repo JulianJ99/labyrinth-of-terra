@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43e5cbfef3c5c46418fae21d0a487e8b, type: 3}
+  m_Name: Pyromancer
+  m_EditorClassIdentifier: 
+  className: Pyromancer
+  classSprite: {fileID: 21300000, guid: dffea97634a60db478981433ffaa29cb, type: 3}
+  classWeapon: {fileID: 8957720132813694147, guid: 5018eca40c41965479df6d31f8d1feca, type: 3}
+  hpvPrio: 0.318
+  atkPrio: 0.527
+  defPrio: 0.219
+  movPrio: 0.557
+  strPrio: 0.124
+  magPrio: 0.766
+  dexPrio: 0.607
+  spdPrio: 0.428
+  resPrio: 0.652
+  lckPrio: 0.279
+  weaponAffinities:
+  - weapon: {fileID: 11400000, guid: 24e0f371f879d4a47a4661be87364504, type: 2}
+    affinity: 75
+  classSkills:
+  - {fileID: 11400000, guid: f9dba3f59dc0fd846b572b8bb71cff37, type: 2}
