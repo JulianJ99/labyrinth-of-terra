@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
+namespace Terra {
 public class UpgradeWeapons : MonoBehaviour
 {
     public WeaponManager weaponToUpgrade;
@@ -72,4 +73,5 @@ public class UpgradeWeapons : MonoBehaviour
     {
         return baseCost + (level * increaseCost);
     }
+}
 }

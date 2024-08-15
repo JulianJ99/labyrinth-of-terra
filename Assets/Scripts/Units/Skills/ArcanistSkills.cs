@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
+namespace Terra {
 public class ArcanistSkills : MonoBehaviour
 {
     [Header("References")]
@@ -126,4 +127,5 @@ public class ArcanistSkills : MonoBehaviour
             inventory.AddToConvoy(skillBook);
         }
     }
+}
 }

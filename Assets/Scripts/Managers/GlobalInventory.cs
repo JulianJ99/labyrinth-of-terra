@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+namespace Terra {
 public class GlobalInventory : MonoBehaviour
 {
-    public new List<GameObject> globalInventory = new List<GameObject>();
+    public List<GameObject> globalInventory = new List<GameObject>();
 
     private void Awake()
     {
@@ -26,4 +27,5 @@ public class GlobalInventory : MonoBehaviour
     {
 
     }
+}
 }

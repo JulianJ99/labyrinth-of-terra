@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+namespace Terra {
 public class WeaponManager : MonoBehaviour
 {
     public Weapons weaponRef;
@@ -57,4 +58,5 @@ public class WeaponManager : MonoBehaviour
         critChance += weaponRef.upgradeCrit;
         weaponLevel++;
     }
+}
 }

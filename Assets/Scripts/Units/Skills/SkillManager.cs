@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+namespace Terra {
 public class SkillManager : MonoBehaviour
 {
     public List<Skills> skills = new List<Skills>();
@@ -10,4 +11,5 @@ public class SkillManager : MonoBehaviour
     {
         skills.Add(skill);
     }
+}
 }

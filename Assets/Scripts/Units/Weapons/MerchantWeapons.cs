@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 
+namespace Terra {
 public class MerchantWeapons : MonoBehaviour
 {
     public GameObject weapon;
@@ -48,4 +49,5 @@ public class MerchantWeapons : MonoBehaviour
            inventory.AddToConvoy(weaponInstance);
         }
     }
+}
 }

@@ -6,6 +6,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
+namespace Terra { 
 public class CharacterManager : MonoBehaviour
 {
     [Header("References")]
@@ -129,4 +130,5 @@ public class CharacterManager : MonoBehaviour
             manager.AddTrait(traits[randomValue]);
         }
     }
+}
 }

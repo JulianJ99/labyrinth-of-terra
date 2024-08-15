@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
+namespace Terra {
 public class ItemManager : MonoBehaviour
 {
 
@@ -83,4 +84,5 @@ public class ItemManager : MonoBehaviour
             itemRef = itemReferences[3];
         }
     }
+}
 }

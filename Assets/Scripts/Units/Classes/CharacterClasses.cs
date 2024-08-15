@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+namespace Terra {
 public class CharacterClasses : MonoBehaviour
 {
     public ClassCreation[] classes;
@@ -77,4 +78,5 @@ public class CharacterClasses : MonoBehaviour
         SkillManager skills = GetComponent<SkillManager>();
         skills.AddSkill(currentClass.classSkills[0]);
     }
+}
 }

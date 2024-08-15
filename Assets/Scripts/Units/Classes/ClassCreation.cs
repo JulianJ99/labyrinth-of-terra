@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+namespace Terra {
 [CreateAssetMenu(fileName = "New Class", menuName = "Classes")]
 public class ClassCreation : ScriptableObject
 {
@@ -22,5 +23,6 @@ public class ClassCreation : ScriptableObject
 
     public List<WeaponAffinity> weaponAffinities;
     public List<Skills> classSkills;
+}
 }
 
