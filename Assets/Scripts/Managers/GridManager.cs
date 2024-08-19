@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Assertions.Must;
 using UnityEngine.Tilemaps;
 using Random = UnityEngine.Random;
 
@@ -19,9 +20,6 @@ public class GridManager : MonoBehaviour {
     public Dictionary<Vector2Int, OverlayTile> map;
 
     public Dictionary<Vector2Int, Tile> undermap;
-
-    public Dictionary<Vector2Int, Tile> spawnmap;
-    
 
     [SerializeField] public Tilemap blankmap;
 
@@ -42,9 +40,36 @@ public class GridManager : MonoBehaviour {
             }
     }
 
-        void Start()
+        public void Start()
         {
-            var tileMaps = gameObject.transform.GetComponentsInChildren<Tilemap>().OrderByDescending(x => x.GetComponent<TilemapRenderer>().sortingOrder);
+            
+        }
+
+
+    public void GenerateGrid()
+    {
+        for (int x = 0; x < _width; x++)
+        {
+            for (int y = 0; y < _height; y++) {
+                var randomTile = Random.Range(0, 6) == 3 ? _mountainTile : _grassTile;
+                foreach(GameObject partyMember in PartyManager.Instance.partyMembers){
+                    
+                    Vector3 check = new Vector3(x + 0.5f, y + 0.5f, 1);
+                    
+                    if(check == partyMember.transform.position){
+                        randomTile = _grassTile;
+                        Debug.Log("Your ass is grass" + partyMember.transform.position);
+                    }
+                }
+                TileBase spawnedTile = randomTile;
+                
+                Vector3Int p = new Vector3Int(x, y, 0);
+                blankmap.SetTile(p, spawnedTile);
+                
+                
+            }
+        }
+var tileMaps = gameObject.transform.GetComponentsInChildren<Tilemap>().OrderByDescending(x => x.GetComponent<TilemapRenderer>().sortingOrder);
             map = new Dictionary<Vector2Int, OverlayTile>();
 
             foreach (var tm in tileMaps)
@@ -76,15 +101,18 @@ public class GridManager : MonoBehaviour {
                                     overlayTile.GetComponent<SpriteRenderer>().sortingOrder = tm.GetComponent<TilemapRenderer>().sortingOrder + 1;
                                     overlayTile.gameObject.GetComponent<OverlayTile>().gridLocation = new Vector3Int(x, y, z);
                                     overlayTile.name = $"Tile {x} {y}";
-                                    foreach(BaseUnit unit in UnitManager.Instance.instantiatedUnits){
-                                        if(overlayTile.transform.position == unit.transform.position){
+                                    foreach(GameObject partyMember in PartyManager.Instance.partyMembers){
+                                        if(overlayTile.transform.position == partyMember.transform.position){
                                             Debug.Log("Overlap!");
-                                            overlayTile.gameObject.GetComponent<OverlayTile>().OccupiedUnit = unit;
+                                            overlayTile.gameObject.GetComponent<OverlayTile>().OccupiedUnit = partyMember.GetComponent<BaseUnit>();
                                             overlayTile.gameObject.GetComponent<OverlayTile>().isOccupied = true;
                                         }
                                     }
                                     //Spawn tiles
-                                    map.Add(new Vector2Int(x, y), overlayTile.gameObject.GetComponent<OverlayTile>());
+                                    map.Add(new Vector2Int(x, y), overlayTile.GetComponent<OverlayTile>());
+                                    foreach(KeyValuePair<Vector2Int, OverlayTile> kvp in map ){
+                                        //Debug.Log("Key:" + kvp.Key, kvp.Value);
+                                    }
                                     
                                 }
                                 }
@@ -94,47 +122,17 @@ public class GridManager : MonoBehaviour {
                     }
                 }
             }
-        }
-
-
-    public void GenerateGrid()
-    {
-        var tileMaps = gameObject.transform.GetComponentsInChildren<TilemapRenderer>();
-        undermap = new Dictionary<Vector2Int, Tile>();
-        for (int x = 0; x < _width; x++)
-        {
-            for (int y = 0; y < _height; y++) {
-                var randomTile = Random.Range(0, 6) == 3 ? _mountainTile : _grassTile;
-                foreach(BaseUnit unit in UnitManager.Instance.instantiatedUnits){
-                    
-                    Vector3 check = new Vector3(x + 0.5f, y + 0.5f, 1);
-                    
-                    if(check == unit.transform.position){
-                        randomTile = _grassTile;
-                        Debug.Log("Your ass is grass" + unit.transform.position);
-                    }
-                }
-                TileBase spawnedTile = randomTile;
-                
-                Vector3Int p = new Vector3Int(x, y, 0);
-                blankmap.SetTile(p, spawnedTile);
-                //spawnmap.Add(new Vector2Int(x, y), randomTile.gameObject.GetComponent<TileBase>());
-                
-            }
-        }
-
-        
         //Debug.Log("Grid spawned");
         GameManager.Instance.ChangeState(GameState.SpawnHeroes);
     }
 
     public OverlayTile GetHeroSpawnTile() {    
-                
-        return map.Where(t => t.Key.x > _width / 2).OrderBy(t => Random.value).First().Value;
+        return map.Where(t => t.Key.x < _width / 2).OrderBy(t => Random.value).First().Value;
     }
 
     public OverlayTile GetEnemySpawnTile(){
-        return map.Where(t => t.Key.x < _width / 2).OrderBy(t => Random.value).First().Value;
+        return map.Where(t => t.Key.x > _width / 2).OrderBy(t => Random.value).First().Value;
+        
     }
 
     public Tile GetTileAtPosition(Vector2Int pos)

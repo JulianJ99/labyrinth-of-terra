@@ -3,13 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PartyManager : MonoBehaviour
+namespace Terra{public class PartyManager : MonoBehaviour
 {
+    public static PartyManager Instance;
     public ResourceManager ResourceManager;
     public List<GameObject> partyMembers = new List<GameObject>();
 
     private void Awake()
     {
+        Instance = this;
         DontDestroyOnLoad(gameObject);
     }
 
@@ -35,4 +37,5 @@ public class PartyManager : MonoBehaviour
     {
         partyMembers.Remove(character);
     }
+}
 }

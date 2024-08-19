@@ -24,17 +24,16 @@ public class UnitManager : MonoBehaviour {
     }
 
     public void SpawnHeroes() {
-        var heroCount = 1;
 
-        for (int i = 0; i < heroCount; i++) {
-            var randomPrefab = GetRandomUnit<BaseHero>(Faction.Hero);
+            foreach(GameObject partyMember in PartyManager.Instance.partyMembers){
+                var randomSpawnTile = GridManager.Instance.GetHeroSpawnTile();
+                Debug.Log(randomSpawnTile);
+                randomSpawnTile.SetUnit(partyMember);
+            }
             
-            var spawnedHero = Instantiate(randomPrefab);
             
-            var randomSpawnTile = GridManager.Instance.GetHeroSpawnTile();
-            Debug.Log(randomSpawnTile);
-            randomSpawnTile.SetUnit(spawnedHero);
-        }
+
+        
 
         GameManager.Instance.ChangeState(GameState.SpawnEnemies);
     }
@@ -55,9 +54,9 @@ public class UnitManager : MonoBehaviour {
         GameManager.Instance.ChangeState(GameState.HeroesTurn);
     }
 
-    private T GetRandomUnit<T>(Faction faction) where T : BaseUnit {
-        return (T)_units.Where(u => u.Faction == faction).OrderBy(o => Random.value).First().UnitPrefab;
-    }
+    // private T GetRandomUnit<T>(Faction faction) where T : BaseUnit {
+    //     return (T)_units.Where(u => u.Faction == faction).OrderBy(o => Random.value).First().UnitPrefab;
+    // }
 
     public void SetSelectedHero(BaseHero hero) {
         SelectedHero = hero;
@@ -66,9 +65,9 @@ public class UnitManager : MonoBehaviour {
 
     public void TurnReset(){
         Debug.Log(_units);
-        foreach (BaseUnit unit in instantiatedUnits){
-            unit.TurnReady = true;
-            unit.GetComponent<SpriteRenderer>().color = Color.white;
+        foreach (GameObject partyMember in PartyManager.Instance.partyMembers){
+            partyMember.GetComponent<BaseUnit>().TurnReady = true;
+            partyMember.GetComponent<SpriteRenderer>().color = Color.white;
            
         }  
         GameManager.Instance.ChangeState(GameState.HeroesTurn);

@@ -63,12 +63,15 @@ namespace Terra
             }
         }
 
-        public void SetUnit(BaseUnit unit) {   
+        public void SetUnit(GameObject unit) {   
         
-        if (unit.standingOnTile != null) unit.standingOnTile.OccupiedUnit = null;
+        if (unit.GetComponent<BaseUnit>().standingOnTile != null) unit.GetComponent<BaseUnit>().standingOnTile.OccupiedUnit = null;
         unit.transform.position = gridLocation;
-        OccupiedUnit = unit;
-        unit.standingOnTile = this;
+        var properX = unit.transform.position.x + 0.5f;
+        var properY = unit.transform.position.y + 0.5f;
+        unit.transform.position = new Vector3(properX, properY, unit.transform.position.z);
+        OccupiedUnit = unit.GetComponent<BaseUnit>();
+        unit.GetComponent<BaseUnit>().standingOnTile = this;
         
     }
 

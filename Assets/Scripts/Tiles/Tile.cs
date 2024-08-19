@@ -56,7 +56,7 @@ public abstract class Tile : MonoBehaviour {
 
     }
 
-    // public void SetUnit(BaseUnit unit) {   
+    // public void SetUnit(GameObject unit) {   
     //     if(this == Walkable){
     //     if (unit.OccupiedTile != null) unit.OccupiedTile.OccupiedUnit = null;
     //     unit.transform.position = transform.position;

@@ -141,7 +141,7 @@ namespace Terra
                 character = null;
                 
                 turnsEnded += 1;
-                if(turnsEnded == UnitManager.Instance.instantiatedUnits.Count()){
+                if(turnsEnded == PartyManager.Instance.partyMembers.Count()){
                     GameManager.Instance.ChangeState(GameState.EnemiesTurn);
                     turnsEnded = 0;
                 }
