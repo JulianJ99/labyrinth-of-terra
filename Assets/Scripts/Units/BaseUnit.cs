@@ -39,6 +39,8 @@ public class BaseUnit : MonoBehaviour {
 
     public List<WeaponAffinity> weaponsAffinities;
 
+    //Variable for equipped weapon so units start with their first weapon equipped
+
     [Header("EXP System")]
     public int currentLevel;
     public float expAmount;

@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Terra{public class PartyManager : MonoBehaviour
+namespace Terra {
+public class PartyManager : MonoBehaviour 
 {
     public static PartyManager Instance;
     public ResourceManager ResourceManager;

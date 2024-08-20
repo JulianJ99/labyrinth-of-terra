@@ -8380,6 +8380,101 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8135420577410483147, guid: 366765e7bf1934a43b38a1db5542cf44, type: 3}
   m_PrefabInstance: {fileID: 1488236111}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1490973990
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1490973991}
+  - component: {fileID: 1490973992}
+  m_Layer: 0
+  m_Name: EnemyManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1490973991
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1490973990}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1490973992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1490973990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 045196af44bbd58438038defaaa64dc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyFramework: {fileID: 6218278656418809790, guid: ae3639f1abac71a478b7288002f51363, type: 3}
+  enemyPool: 3
+  randomNames:
+  - Scarface
+  - Two-Face
+  - Moneybags
+  - Mad Dog
+  - Fast Fingers
+  - Weasel
+  - Crackpot
+  - Thug
+  hpvMin: 12
+  hpvMax: 32
+  atkMin: 6
+  atkMax: 15
+  defMin: 5
+  defMax: 17
+  movMin: 3
+  movMax: 6
+  strMin: 4
+  strMax: 18
+  magMin: 2
+  magMax: 19
+  dexMin: 4
+  dexMax: 16
+  spdMin: 4
+  spdMax: 16
+  resMin: 3
+  resMax: 14
+  lckMin: 0
+  lckMax: 15
+  traits:
+  - {fileID: 11400000, guid: d4110fed947717c4d96d3abeda4eec7a, type: 2}
+  - {fileID: 11400000, guid: 2a2aea201e70e084bb33a468747820c6, type: 2}
+  - {fileID: 11400000, guid: 9aa4dd329668a994eba63a30df25f196, type: 2}
+  - {fileID: 11400000, guid: 02690b4baa3777d4eb29fd7b630b1d4e, type: 2}
+  - {fileID: 11400000, guid: e59317148c0d8964ca40a46fa202b78e, type: 2}
+  - {fileID: 11400000, guid: d7dd3736341396a488f9839b07f4f7b8, type: 2}
+  - {fileID: 11400000, guid: 4a2c79788a6b39441862bc8af15edea6, type: 2}
+  - {fileID: 11400000, guid: 48666a328f7044049815829447ba7d72, type: 2}
+  - {fileID: 11400000, guid: 34fc17014b9232945b98627b40192fb5, type: 2}
+  - {fileID: 11400000, guid: 158ae4bf076800445918a375b097dba5, type: 2}
+  - {fileID: 11400000, guid: 353c0f108289beb49a7f2ddf7369d91d, type: 2}
+  - {fileID: 11400000, guid: b597ac9875ce43545a305fa2e5215936, type: 2}
+  - {fileID: 11400000, guid: d3eb7313224013d479efb8a4b991c03d, type: 2}
+  - {fileID: 11400000, guid: dff36bcc028372644a61f5360b138d9b, type: 2}
+  - {fileID: 11400000, guid: 46da7296f5a375e44a8f9d7d83b63e34, type: 2}
+  - {fileID: 11400000, guid: bd4d349b594c7d948a6929f781faa44a, type: 2}
+  - {fileID: 11400000, guid: 88d58c065a1c17b4fa5b42f47e98f098, type: 2}
+  randomChance: 0.15
+  enemyList: []
 --- !u!1 &1527177284
 GameObject:
   m_ObjectHideFlags: 0
@@ -12889,12 +12984,13 @@ CanvasRenderer:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 2111153967}
   - {fileID: 965105057}
+  - {fileID: 2111153967}
+  - {fileID: 392671675}
   - {fileID: 637845312}
   - {fileID: 1316926962}
   - {fileID: 2024524276}
-  - {fileID: 392671675}
+  - {fileID: 1490973991}
   - {fileID: 584316996}
   - {fileID: 1801647305}
   - {fileID: 495888122}

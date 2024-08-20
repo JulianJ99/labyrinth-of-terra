@@ -69,7 +69,7 @@ public class GridManager : MonoBehaviour {
                 
             }
         }
-var tileMaps = gameObject.transform.GetComponentsInChildren<Tilemap>().OrderByDescending(x => x.GetComponent<TilemapRenderer>().sortingOrder);
+            var tileMaps = gameObject.transform.GetComponentsInChildren<Tilemap>().OrderByDescending(x => x.GetComponent<TilemapRenderer>().sortingOrder);
             map = new Dictionary<Vector2Int, OverlayTile>();
 
             foreach (var tm in tileMaps)
@@ -101,6 +101,7 @@ var tileMaps = gameObject.transform.GetComponentsInChildren<Tilemap>().OrderByDe
                                     overlayTile.GetComponent<SpriteRenderer>().sortingOrder = tm.GetComponent<TilemapRenderer>().sortingOrder + 1;
                                     overlayTile.gameObject.GetComponent<OverlayTile>().gridLocation = new Vector3Int(x, y, z);
                                     overlayTile.name = $"Tile {x} {y}";
+                                    //List of both teams for foreach \/
                                     foreach(GameObject partyMember in PartyManager.Instance.partyMembers){
                                         if(overlayTile.transform.position == partyMember.transform.position){
                                             Debug.Log("Overlap!");
@@ -110,9 +111,7 @@ var tileMaps = gameObject.transform.GetComponentsInChildren<Tilemap>().OrderByDe
                                     }
                                     //Spawn tiles
                                     map.Add(new Vector2Int(x, y), overlayTile.GetComponent<OverlayTile>());
-                                    foreach(KeyValuePair<Vector2Int, OverlayTile> kvp in map ){
-                                        //Debug.Log("Key:" + kvp.Key, kvp.Value);
-                                    }
+
                                     
                                 }
                                 }
