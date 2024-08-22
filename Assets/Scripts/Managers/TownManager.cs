@@ -9,66 +9,46 @@ public class TownManager : MonoBehaviour
     [Header("Public references")]
     public TMP_Text currentLocation;
     public Image currentImage;
-    public Sprite[] backgroundSprites;
-    public GameObject[] connectedUI;
+    public Sprite startingSprite;
+    public GameObject[] connectedLocations;
     public string[] locationNames;
 
-    private string currentPage;
-    private int currentNumber;
+    private int startingLocation = 0;
     
     // Start is called before the first frame update
     void Start()
     {
-        currentNumber = 0;
-
-        currentLocation.text = locationNames[currentNumber];
-        currentImage.sprite = backgroundSprites[currentNumber];
-
-        for (int i = 0; i < connectedUI.Length; i++)
+        for(int i = 0; i < connectedLocations.Length; i++)
         {
-            connectedUI[i].gameObject.SetActive(false);
+            connectedLocations[i].gameObject.SetActive(false);
         }
 
-        connectedUI[currentNumber].gameObject.SetActive(true);
+        connectedLocations[startingLocation].gameObject.SetActive(true);
+        currentLocation.text = locationNames[startingLocation];
+        currentImage.sprite = startingSprite;
     }
 
-    public void NextPage()
+    public void LoadPage(string locName)
     {
-        currentNumber++;
-
-        if (currentNumber > connectedUI.Length -1)
+        for(int i = 0;i < connectedLocations.Length;i++)
         {
-            currentNumber = connectedUI.Length -1;
+           UiInformation currentUI = connectedLocations[i].GetComponent<UiInformation>();
+           if(locName == currentUI.identifier)
+           {
+              currentImage.sprite = currentUI.connectedSprite;
+              currentLocation.text = currentUI.identifier;
+
+              ResetActivePage();
+              connectedLocations[currentUI.locationNumber].gameObject.SetActive(true);
+           }
         }
-
-        currentLocation.text = locationNames[currentNumber];
-        currentImage.sprite = backgroundSprites[currentNumber];
-
-        for(int i = 0; i < connectedUI.Length; i++)
-        {
-            connectedUI[i].gameObject.SetActive(false);
-        }
-
-        connectedUI[currentNumber].gameObject.SetActive(true);
     }
 
-    public void PrevPage()
+    private void ResetActivePage()
     {
-        currentNumber--;
-
-        if (currentNumber < 0)
+        for (int i = 0; i < connectedLocations.Length; i++)
         {
-            currentNumber = 0;
+            connectedLocations[i].gameObject.SetActive(false);
         }
-
-        currentLocation.text = locationNames[currentNumber];
-        currentImage.sprite = backgroundSprites[currentNumber];
-
-        for (int i = 0; i < connectedUI.Length; i++)
-        {
-            connectedUI[i].gameObject.SetActive(false);
-        }
-
-        connectedUI[currentNumber].gameObject.SetActive(true);
     }
 }
