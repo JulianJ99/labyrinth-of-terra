@@ -17,6 +17,7 @@ namespace Terra {
         public int weaponMight;
         public float weaponHit;
         public float weaponCrit;
+        public int weaponRange;
         public float weaponReqAff;
         public int weaponCost;
 

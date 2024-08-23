@@ -20,6 +20,7 @@ MonoBehaviour:
   weaponMight: 5
   weaponHit: 75
   weaponCrit: 0
+  weaponRange: 2
   weaponReqAff: 25
   weaponCost: 250
   upgradeMight: 1

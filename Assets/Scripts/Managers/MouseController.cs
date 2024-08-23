@@ -3,6 +3,9 @@ using UnityEngine;
 using System.Linq;
 using static Terra.ArrowTranslator;
 using UnityEditor.Overlays;
+using UnityEngine.TextCore.Text;
+using Unity.Collections;
+using System;
 
 namespace Terra
 {
@@ -18,6 +21,7 @@ namespace Terra
         private ArrowTranslator arrowTranslator;
         private List<OverlayTile> path;
         private List<OverlayTile> rangeFinderTiles;
+        public List<OverlayTile> weaponRangeFinderTiles;
         [SerializeField] private bool isMoving;
 
         private int turnsEnded;
@@ -46,14 +50,18 @@ namespace Terra
             
             if (hit.HasValue)
             {
+                
                 OverlayTile tile = hit.Value.collider.gameObject.GetComponent<OverlayTile>();
                 cursor.transform.position = tile.transform.position;
+                
+                //GetInWeaponRangeTiles();
                 cursor.gameObject.GetComponent<SpriteRenderer>().sortingOrder = tile.transform.GetComponent<SpriteRenderer>().sortingOrder +1;
 
                 if (rangeFinderTiles.Contains(tile) && !isMoving && character != null)
                 {
+                    
                     path = pathFinder.FindPath(character.standingOnTile, tile, rangeFinderTiles);
-
+                   
                     foreach (var item in rangeFinderTiles)
                     {
                         GridManager.Instance.map[item.grid2DLocation].SetSprite(ArrowDirection.None);
@@ -108,6 +116,7 @@ namespace Terra
 
         private void MoveAlongPath()
         {
+            
             var step = speed * Time.deltaTime;
             
             float zIndex = path[0].transform.position.z;
@@ -184,6 +193,43 @@ namespace Terra
             {
                 item.ShowTile();
             }
+        }
+
+        // private void GetInWeaponRangeTiles()
+        // {
+            
+        //     foreach (var item in weaponRangeFinderTiles)
+        //     {
+        //         item.ResetTile();
+                
+        //     }
+            
+        //     if(character != null && character.GetComponent<CharacterInventory>() != null){
+                
+        //         weaponRangeFinderTiles = rangeFinder.GetTilesInRange(cursor.transform.position.ClosestGrid(), character.GetComponent<CharacterInventory>().equippedWeapon.weaponRef.weaponRange);
+            
+        //         foreach (var item in weaponRangeFinderTiles)
+        //         {
+        //             if(cursor.transform.position.ClosestGrid() == item.transform.position.ClosestGrid()){
+        //                 item.ShowWeaponTile();
+        //             }
+                    
+        //         }
+                
+        //     }
+
+        // }
+
+        
+    }
+
+    public static class VectorExtensions
+    {
+        public static Vector2Int ClosestGrid(this Vector3 vec)
+        {
+            var xr = Math.Round(vec.x / 2f, MidpointRounding.AwayFromZero) * 2f;
+            var yr = Math.Round(vec.y / 2f, MidpointRounding.AwayFromZero) * 2f;
+            return new Vector2Int((int)xr, (int)yr);
         }
     }
 }

@@ -16,6 +16,7 @@ public class WeaponManager : MonoBehaviour
     public bool isBroken = false;
     public float hitChance;
     public float critChance;
+    public int range;
     public float requiredAffinity;
     public int cost;
     
@@ -35,6 +36,7 @@ public class WeaponManager : MonoBehaviour
         type = weaponRef.weaponType;
         hitChance = weaponRef.weaponHit;
         critChance = weaponRef.weaponCrit;
+        range = weaponRef.weaponRange;
         requiredAffinity = weaponRef.weaponReqAff;
         maxDurability = durability;
 

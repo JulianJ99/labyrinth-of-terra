@@ -8,7 +8,7 @@ public class CharacterClasses : MonoBehaviour
     public ClassCreation[] classes;
     private ClassCreation currentClass;
     private float randomChance = 0.15f;
-    private bool hasHappened = true;
+    
 
     public List<Weapons> allWeapons;
 
@@ -129,6 +129,12 @@ public class CharacterClasses : MonoBehaviour
         if(GetComponent<Hero1>() != null){
             
             Hero1 unit = GetComponent<Hero1>();
+            unit.GetComponent<CharacterInventory>().equippedWeapon = weaponToAdd.GetComponent<WeaponManager>();
+        } 
+        else{
+            
+            Enemy1 unit = GetComponent<Enemy1>();
+            unit.GetComponent<CharacterInventory>().equippedWeapon = weaponToAdd.GetComponent<WeaponManager>();
         }
     }
 

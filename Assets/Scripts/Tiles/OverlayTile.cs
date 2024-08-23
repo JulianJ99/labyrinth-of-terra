@@ -21,6 +21,10 @@ namespace Terra
 
         public BaseUnit OccupiedUnit;
 
+        public Sprite WeaponTile;
+
+        public Sprite RegularTile;
+
         [SerializeField] private bool _isWalkable;
 
         public bool Walkable => _isWalkable && OccupiedUnit == null;
@@ -50,9 +54,20 @@ namespace Terra
         {
             gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
         }
+        public void ShowWeaponTile()
+        {
+            gameObject.GetComponent<SpriteRenderer>().sprite = WeaponTile;
+        }
+
+        public void ResetTile()
+        {
+            gameObject.GetComponent<SpriteRenderer>().sprite = RegularTile;
+            
+        }
 
         public void SetSprite(ArrowDirection d)
         {
+            
             if (d == ArrowDirection.None)
                 GetComponentsInChildren<SpriteRenderer>()[1].color = new Color(1, 1, 1, 0);
             else

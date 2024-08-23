@@ -7,6 +7,7 @@ public class CharacterInventory : MonoBehaviour
 {
     public List<GameObject> inventory = new List<GameObject>();
     public int inventorySpace;
+    public WeaponManager equippedWeapon;
     // Start is called before the first frame update
     void Start()
     {

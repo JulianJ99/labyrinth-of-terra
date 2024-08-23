@@ -109,6 +109,13 @@ public class GridManager : MonoBehaviour {
                                             overlayTile.gameObject.GetComponent<OverlayTile>().isOccupied = true;
                                         }
                                     }
+                                    foreach(GameObject enemy in EnemyManager.Instance.enemyList){
+                                        if(overlayTile.transform.position == enemy.transform.position){
+                                            Debug.Log("Overlap!");
+                                            overlayTile.gameObject.GetComponent<OverlayTile>().OccupiedUnit = enemy.GetComponent<BaseUnit>();
+                                            overlayTile.gameObject.GetComponent<OverlayTile>().isOccupied = true;
+                                        }                                        
+                                    }
                                     //Spawn tiles
                                     map.Add(new Vector2Int(x, y), overlayTile.GetComponent<OverlayTile>());
 
