@@ -57,12 +57,13 @@ namespace Terra
         public void ShowWeaponTile()
         {
             gameObject.GetComponent<SpriteRenderer>().sprite = WeaponTile;
+            gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
         }
 
         public void ResetTile()
         {
             gameObject.GetComponent<SpriteRenderer>().sprite = RegularTile;
-            
+            gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);
         }
 
         public void SetSprite(ArrowDirection d)
