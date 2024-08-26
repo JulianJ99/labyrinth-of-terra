@@ -40,6 +40,7 @@ public class ArcanistSkills : MonoBehaviour
         {
             GenerateSkills();
         }
+        isCreated = true;
     }
 
     private void GenerateSkills()

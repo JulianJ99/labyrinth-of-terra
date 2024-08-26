@@ -10,10 +10,10 @@ public class CharacterManager : MonoBehaviour
 {
     [Header("References")]
     public BaseHero heroFramework;
-    public GameObject[] charSpacesUI;
+    
     public int characterPool = 3;
     public PartyManager partyManager;
-
+    public GameObject[] characterCarrier;
     private string currentName;
     private string className;
     private int currentIndex = 0;
@@ -40,9 +40,15 @@ public class CharacterManager : MonoBehaviour
     [Header("Resources")]
     public int minCost, maxCost;
 
-    void Start()
+    private bool alreadyGenerated = false;
+
+    void OnEnable()
     {
-        GenerateRandomCharacters();
+        if(!alreadyGenerated)
+        {
+            GenerateRandomCharacters();
+            alreadyGenerated = true;
+        }
     }
 
     private void GenerateRandomCharacters()
@@ -64,9 +70,8 @@ public class CharacterManager : MonoBehaviour
             currentImage = HeroPrefab.GetComponent<SpriteRenderer>().sprite;
             RandomizeValues();
             ChangeCharacterStats(HeroPrefab);
-            SelectUI();
   
-            Button button = charSpacesUI[currentIndex].GetComponentInChildren<Button>();
+            Button button = characterCarrier[i].GetComponentInChildren<Button>();
             button.onClick.AddListener(() => partyManager.RecruitCharacter(HeroPrefab, button, currentCost));
 
             HeroPrefab.name = currentName;
@@ -94,17 +99,28 @@ public class CharacterManager : MonoBehaviour
         currentChar.cost = UnityEngine.Random.Range(minCost, maxCost);
 
         currentCost = currentChar.cost;
+
+        SelectUI(currentChar);
     }
 
-    private void SelectUI()
+    private void SelectUI(Hero1 character)
     {
-        TMP_Text[] Texts = charSpacesUI[currentIndex].GetComponentsInChildren<TMP_Text>();
-        Image CharImage = charSpacesUI[currentIndex].GetComponentInChildren<Image>();
+        CharacterUI ui = characterCarrier[currentIndex].GetComponent<CharacterUI>();
 
-        Texts[0].text = currentName;
-        Texts[1].text = className;
-        Texts[2].text = currentCost.ToString();
-        CharImage.sprite = currentImage;
+        ui.characterName.text = character.UnitName;
+        ui.characterImage.sprite = character.gameObject.GetComponent<SpriteRenderer>().sprite;
+        ui.characterClass.text = character.className;
+        ui.characterLevel.text = character.currentLevel.ToString();
+        ui.characterHealth.text = character.health.ToString();
+        ui.characterStrength.text = character.strength.ToString();
+        ui.characterDexterity.text = character.dexterity.ToString();
+        ui.characterResistance.text = character.resistance.ToString();
+        ui.characterExperience.text = character.expAmount.ToString();
+        ui.characterMovement.text = character.movementRange.ToString();
+        ui.characterMagic.text = character.magic.ToString();
+        ui.characterSpeed.text = character.speed.ToString();
+        ui.characterLuck.text = character.luck.ToString();
+        ui.characterCost.text = character.cost.ToString() + " Buy";
     }
 
     private void RandomizeValues()
