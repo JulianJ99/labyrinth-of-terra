@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+namespace Terra {
 public class CharacterInventory : MonoBehaviour
 {
-    public new List<GameObject> inventory = new List<GameObject>();
+    public List<GameObject> inventory = new List<GameObject>();
     public int inventorySpace;
+    public WeaponManager equippedWeapon;
     // Start is called before the first frame update
     void Start()
     {
@@ -42,4 +44,5 @@ public class CharacterInventory : MonoBehaviour
     {
         print("testing");
     }
+}
 }

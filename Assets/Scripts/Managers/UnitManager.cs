@@ -1,14 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.UI;
 
+namespace Terra { 
 public class UnitManager : MonoBehaviour {
     public static UnitManager Instance;
 
-    private List<ScriptableUnit> _units;
+    public List<ScriptableUnit> _units;
+
     public BaseHero SelectedHero;
+
+    BaseUnit Unit;
 
     void Awake() {
         Instance = this;
@@ -18,41 +24,45 @@ public class UnitManager : MonoBehaviour {
     }
 
     public void SpawnHeroes() {
-        var heroCount = 1;
 
-        for (int i = 0; i < heroCount; i++) {
-            var randomPrefab = GetRandomUnit<BaseHero>(Faction.Hero);
-            var spawnedHero = Instantiate(randomPrefab);
-            var randomSpawnTile = GridManager.Instance.GetHeroSpawnTile();
-
-            randomSpawnTile.SetUnit(spawnedHero);
-        }
+            foreach(GameObject partyMember in PartyManager.Instance.partyMembers){
+                var randomSpawnTile = GridManager.Instance.GetHeroSpawnTile();
+                
+                randomSpawnTile.SetUnit(partyMember);
+            }
 
         GameManager.Instance.ChangeState(GameState.SpawnEnemies);
     }
 
     public void SpawnEnemies()
     {
-        var enemyCount = 1;
-
-        for (int i = 0; i < enemyCount; i++)
-        {
-            var randomPrefab = GetRandomUnit<BaseEnemy>(Faction.Enemy);
-            var spawnedEnemy = Instantiate(randomPrefab);
-            var randomSpawnTile = GridManager.Instance.GetEnemySpawnTile();
-
-            randomSpawnTile.SetUnit(spawnedEnemy);
+        foreach(GameObject enemy in EnemyManager.Instance.enemyList){
+                Debug.Log("Enemy position reset");
+                var randomSpawnTile = GridManager.Instance.GetEnemySpawnTile();
+                
+                randomSpawnTile.SetUnit(enemy);
         }
 
         GameManager.Instance.ChangeState(GameState.HeroesTurn);
     }
 
-    private T GetRandomUnit<T>(Faction faction) where T : BaseUnit {
-        return (T)_units.Where(u => u.Faction == faction).OrderBy(o => Random.value).First().UnitPrefab;
-    }
+    // private T GetRandomUnit<T>(Faction faction) where T : BaseUnit {
+    //     return (T)_units.Where(u => u.Faction == faction).OrderBy(o => Random.value).First().UnitPrefab;
+    // }
 
     public void SetSelectedHero(BaseHero hero) {
         SelectedHero = hero;
         MenuManager.Instance.ShowSelectedHero(hero);
     }
+
+    public void TurnReset(){
+        Debug.Log(_units);
+        foreach (GameObject partyMember in PartyManager.Instance.partyMembers){
+            partyMember.GetComponent<BaseUnit>().TurnReady = true;
+            partyMember.GetComponent<SpriteRenderer>().color = Color.white;
+           
+        }  
+        GameManager.Instance.ChangeState(GameState.HeroesTurn);
+    }
+}
 }

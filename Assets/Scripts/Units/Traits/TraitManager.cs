@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+namespace Terra {
 public class TraitManager : MonoBehaviour
 {
     public List<Traits> traits = new List<Traits>();
@@ -10,4 +11,5 @@ public class TraitManager : MonoBehaviour
     {
         traits.Add(trait);
     }
+}
 }

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+namespace Terra {
 [CreateAssetMenu(fileName = "New Item", menuName = "Items")]
 public class Items : ScriptableObject
 {
@@ -14,4 +15,5 @@ public class Items : ScriptableObject
     public int itemUses;
     public int itemHeal;
 
+}
 }

@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
+namespace Terra {
 public class RepairWeapons : MonoBehaviour
 {
     public WeaponManager weaponToRepair;
@@ -51,4 +52,5 @@ public class RepairWeapons : MonoBehaviour
 
         return repairCost;
     }
+}
 }

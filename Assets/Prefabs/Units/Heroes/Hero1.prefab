@@ -138,12 +138,13 @@ MonoBehaviour:
   UnitName: Bounty
   OccupiedTile: {fileID: 0}
   Faction: 0
-  movePoint: {fileID: 4205944367564940622}
   anim: {fileID: 7053297064799165923}
   health: 20
   attack: 10
   defense: 5
-  movementRange: 5
+  standingOnTile: {fileID: 0}
+  TurnReady: 1
+  movementRange: 4
   moveSpeed: 10
   className: 
   strength: 0

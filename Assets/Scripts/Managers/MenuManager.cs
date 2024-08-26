@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+namespace Terra{
+
 public class MenuManager : MonoBehaviour {
     public static MenuManager Instance;
 
@@ -41,21 +43,9 @@ public class MenuManager : MonoBehaviour {
         }
 
         _selectedHeroObject.GetComponentInChildren<Text>().text = hero.UnitName;
-        _selectedHeroMovementObject.GetComponentInChildren<Text>().text = "Remaining movement: " + hero.movementRange;
-        _selectedHeroObject.SetActive(true);
-        _selectedHeroMovementObject.SetActive(true);
         
     }
 
-    public void ChangeMovementInfo(BaseUnit hero){
-        _selectedHeroMovementObject.GetComponentInChildren<Text>().text = "Remaining movement: " + hero.movementRange;
-    }
 
-    public void ToggleMovementReset(){
-        _selectedHeroMovementResetObject.SetActive(true);
-    }
-
-    public void MovementReset(){
-        _selectedHeroMovementResetObject.SetActive(false);
-    }
+}
 }

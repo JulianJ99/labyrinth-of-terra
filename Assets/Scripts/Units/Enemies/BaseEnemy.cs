@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+namespace Terra { 
 public class BaseEnemy : BaseUnit
 {
     // Start is called before the first frame update
@@ -15,4 +16,5 @@ public class BaseEnemy : BaseUnit
     {
         
     }
+}
 }

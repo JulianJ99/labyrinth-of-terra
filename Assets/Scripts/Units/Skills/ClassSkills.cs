@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+namespace Terra {
 [CreateAssetMenu(fileName = "New Skill", menuName = "Skills")]
 public class Skills : ScriptableObject
 {
@@ -15,6 +17,7 @@ public class Skills : ScriptableObject
     [Header("Purchaseable skills")]
     public bool isPurchaseable;
     public string SkillRarity;
+}
 }
 
 
