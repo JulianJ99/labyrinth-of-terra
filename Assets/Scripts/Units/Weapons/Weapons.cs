@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 
@@ -11,6 +12,12 @@ namespace Terra {
         public string weaponName;
         public Sprite weaponSprite;
         public string weaponType;
+        public enum DamageType{
+        Physical,
+        Magical
+        };
+
+        [SerializeField] public DamageType damageType = DamageType.Physical;
         public string weaponSpecial;
 
         public int weaponDurability;

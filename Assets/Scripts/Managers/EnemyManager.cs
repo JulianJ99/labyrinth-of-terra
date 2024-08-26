@@ -84,10 +84,9 @@ public class EnemyManager : MonoBehaviour
         className = currentChar.className;
 
         currentChar.health = RandomizeValue(hpvMin, hpvMax, currentChar.hpvPrio);
-        currentChar.attack = RandomizeValue(atkMin, atkMax, currentChar.atkPrio);
-        currentChar.defense = RandomizeValue(defMin, defMax, currentChar.defPrio);
         currentChar.movementRange = RandomizeValue(movMin, movMax, currentChar.movPrio);
         currentChar.strength = RandomizeValue(strMin, strMax, currentChar.strPrio);
+        currentChar.defense = RandomizeValue(defMin, defMax, currentChar.defPrio);
         currentChar.magic = RandomizeValue(magMin, magMax, currentChar.magPrio);
         currentChar.dexterity = RandomizeValue(dexMin, dexMax, currentChar.dexPrio);
         currentChar.speed = RandomizeValue(spdMin, spdMax, currentChar.spdPrio);

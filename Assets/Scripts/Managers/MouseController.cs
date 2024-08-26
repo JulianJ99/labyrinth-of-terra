@@ -102,8 +102,8 @@ namespace Terra
 
                     }
                     else if (isMoving && tile.gameObject.GetComponent<OverlayTile>().GetComponent<SpriteRenderer>().sprite.name == "SelectedTileWeapon" && tile.OccupiedUnit.GetComponent<BaseUnit>().Faction != character.Faction){
-                        Debug.Log("Opposing character is not your faction.");
-                        Attack();                       
+                        CombatManager.Instance.Attack(character, tile.OccupiedUnit);
+                        EndTurn();                       
                     }
                     else
                     {
@@ -153,8 +153,6 @@ namespace Terra
             foreach(OverlayTile tile in rangeFinderTiles){
                 if(tile.OccupiedUnit != null){
                     if(tile.OccupiedUnit.GetComponent<BaseUnit>() == character && tile.transform.position != character.transform.position ){
-                        Debug.Log(character.transform.position);
-                        Debug.Log("Reset " + tile.transform.position);
                         tile.OccupiedUnit = null;
                         tile.isOccupied = false;
                     }
@@ -177,10 +175,7 @@ namespace Terra
             GetInWeaponRangeTiles();
         }
 
-        private void Attack(){
-            Debug.Log("Attacked");
-            EndTurn();
-        }
+
         
 
         private void PositionCharacterOnLine(OverlayTile tile)
@@ -241,8 +236,8 @@ namespace Terra
         private void RemoveAdjacentTiles(){
             foreach (var item in weaponRangeFinderTiles)
             {
-                if(item.grid2DLocation.x == character.standingOnTile.gridLocation.x + 1 || item.grid2DLocation.x == character.standingOnTile.gridLocation.x - 1 || 
-                   item.grid2DLocation.y == character.standingOnTile.gridLocation.y + 1 || item.grid2DLocation.y == character.standingOnTile.gridLocation.y - 1){
+                if(item.grid2DLocation.x == character.standingOnTile.gridLocation.x + 1 && item.grid2DLocation.y == character.standingOnTile.gridLocation.y || item.grid2DLocation.x == character.standingOnTile.gridLocation.x - 1 && item.grid2DLocation.y == character.standingOnTile.gridLocation.y || 
+                   item.grid2DLocation.y == character.standingOnTile.gridLocation.y + 1 && item.grid2DLocation.x == character.standingOnTile.gridLocation.x || item.grid2DLocation.y == character.standingOnTile.gridLocation.y - 1 && item.grid2DLocation.x == character.standingOnTile.gridLocation.x){
                     item.HideTile();
                 }
                 else

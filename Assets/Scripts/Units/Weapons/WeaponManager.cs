@@ -11,6 +11,7 @@ public class WeaponManager : MonoBehaviour
     public int weaponLevel;
     public string type;
     public int might;
+    public string damageType;
     public int durability;
     public int maxDurability;
     public bool isBroken = false;
@@ -30,6 +31,7 @@ public class WeaponManager : MonoBehaviour
     public void SetWeapon()
     {
         might = weaponRef.weaponMight;
+        damageType = weaponRef.damageType.ToString();
         durability = weaponRef.weaponDurability;
         spriteRenderer.sprite = weaponRef.weaponSprite;
         gameObject.name = weaponRef.weaponName;

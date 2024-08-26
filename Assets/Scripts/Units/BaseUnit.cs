@@ -14,10 +14,6 @@ public class BaseUnit : MonoBehaviour {
     [SerializeField] public int health;
     public int currentHealth;
 
-    [SerializeField] public int attack;
-
-    [SerializeField] public int defense;
-
     [SerializeField] public int movementRange;
 
     public OverlayTile standingOnTile;
@@ -29,6 +25,7 @@ public class BaseUnit : MonoBehaviour {
 
     [Header("Additional Stats")]
     public int strength;
+    public int defense;
     public int magic;
     public int dexterity;
     public int speed;
