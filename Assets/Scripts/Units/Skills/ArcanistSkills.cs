@@ -17,6 +17,9 @@ public class ArcanistSkills : MonoBehaviour
     public GameObject skillPrefab;
     public int skillsToCreate;
     public ResourceManager manager;
+
+    public bool characterLinked = false;
+    public CharacterInventory characterInventory;
     public GlobalInventory inventory;
 
     [Header("CostValues")]
@@ -125,7 +128,14 @@ public class ArcanistSkills : MonoBehaviour
         {
             manager.SubtractValue(cost);
             button.interactable = false;
-            inventory.AddToConvoy(skillBook);
+            if(!characterLinked)
+                {
+                    inventory.AddToConvoy(skillBook);
+                }
+            else
+                {
+                    characterInventory.AddToInventory(skillBook);
+                }
         }
     }
 }

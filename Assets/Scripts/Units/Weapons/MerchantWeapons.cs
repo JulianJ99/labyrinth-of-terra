@@ -9,6 +9,8 @@ public class MerchantWeapons : MonoBehaviour
 {
     public GameObject weapon;
     public GlobalInventory inventory;
+    public CharacterInventory characterInventory;
+    public bool characterLinked;
     public ResourceManager manager;
 
     public Image image;
@@ -46,7 +48,14 @@ public class MerchantWeapons : MonoBehaviour
         {
            GameObject weaponInstance = Instantiate(weapon);
            manager.SubtractValue(weaponCost);
-           inventory.AddToConvoy(weaponInstance);
+            if(!characterLinked)
+                {
+                    inventory.AddToConvoy(weaponInstance);
+                }
+            else
+                {
+                    characterInventory.AddToInventory(weaponInstance);
+                }
         }
     }
 }
