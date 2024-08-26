@@ -15,6 +15,7 @@ MonoBehaviour:
   weaponName: Fire Magic
   weaponSprite: {fileID: 21300000, guid: 19531269ed700794ea9589908892a6c9, type: 3}
   weaponType: Ranged Slash
+  damageType: 1
   weaponSpecial: Burning Tile
   weaponDurability: 25
   weaponMight: 5

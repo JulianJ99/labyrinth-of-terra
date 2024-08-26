@@ -15,6 +15,7 @@ MonoBehaviour:
   weaponName: Ice Magic
   weaponSprite: {fileID: 21300000, guid: dffea97634a60db478981433ffaa29cb, type: 3}
   weaponType: Ranged Slash
+  damageType: 1
   weaponSpecial: Freeze Tile
   weaponDurability: 25
   weaponMight: 5
