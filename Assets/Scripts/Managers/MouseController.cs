@@ -6,6 +6,7 @@ using UnityEditor.Overlays;
 using UnityEngine.TextCore.Text;
 using Unity.Collections;
 using System;
+using TMPro;
 
 namespace Terra
 {
@@ -27,6 +28,19 @@ namespace Terra
         private int turnsEnded;
 
         [SerializeField] public GameObject TurnMenu; 
+
+        [SerializeField] public GameObject CombatMenu;
+
+        [SerializeField] public GameObject playerName;
+
+        [SerializeField] public GameObject playerHealth;
+        [SerializeField] public GameObject enemyHealth;
+        [SerializeField] public GameObject playerHit;
+        [SerializeField] public GameObject enemyHit;
+        [SerializeField] public GameObject playerDamage;
+        [SerializeField] public GameObject enemyDamage;
+        [SerializeField] public GameObject playerCrit;
+        [SerializeField] public GameObject enemyCrit;
         public static MouseController Instance;        
 
         private void Awake(){
@@ -102,8 +116,8 @@ namespace Terra
 
                     }
                     else if (isMoving && tile.gameObject.GetComponent<OverlayTile>().GetComponent<SpriteRenderer>().sprite.name == "SelectedTileWeapon" && tile.OccupiedUnit.GetComponent<BaseUnit>().Faction != character.Faction){
-                        CombatManager.Instance.Attack(character, tile.OccupiedUnit);
-                        EndTurn();                       
+                        CombatMenuReveal(character, tile.OccupiedUnit);
+                                             
                     }
                     else
                     {
@@ -175,7 +189,57 @@ namespace Terra
             GetInWeaponRangeTiles();
         }
 
+        public void CancelMenu(){
+            TurnMenu.SetActive(true);
+            CombatMenu.SetActive(false);
+        }
 
+        public void CombatMenuReveal(BaseUnit attacker, BaseUnit defender){
+            TurnMenu.SetActive(false);
+            playerName.GetComponent<TMP_Text>().text = attacker.name;
+
+            playerHealth.GetComponent<TMP_Text>().text = attacker.health.ToString();
+            enemyHealth.GetComponent<TMP_Text>().text = defender.health.ToString();
+
+            
+            
+            int attackerDamage = 0;
+            int defenderDamage = 0;
+            if(attacker.GetComponent<CharacterInventory>().equippedWeapon.damageType == "Physical"){
+                
+                attackerDamage = attacker.strength + attacker.GetComponent<CharacterInventory>().equippedWeapon.might - defender.defense;
+            }
+            else{
+                
+                attackerDamage = attacker.magic + attacker.GetComponent<CharacterInventory>().equippedWeapon.might - defender.resistance;
+            }
+            playerDamage.GetComponent<TMP_Text>().text = attackerDamage.ToString();
+
+            if(defender.GetComponent<CharacterInventory>().equippedWeapon.damageType == "Physical"){
+                defenderDamage = defender.strength + defender.GetComponent<CharacterInventory>().equippedWeapon.might - attacker.defense;
+            }
+            else{
+                defenderDamage = defender.magic + defender.GetComponent<CharacterInventory>().equippedWeapon.might - attacker.resistance;
+            }
+            enemyDamage.GetComponent<TMP_Text>().text = defenderDamage.ToString();
+
+            int attackerHitRate = attacker.dexterity * 2 + (int)attacker.GetComponent<CharacterInventory>().equippedWeapon.hitChance - defender.speed * 2;
+            playerHit.GetComponent<TMP_Text>().text = attackerHitRate.ToString();
+            int defenderHitRate = defender.dexterity * 2 + (int)defender.GetComponent<CharacterInventory>().equippedWeapon.hitChance - attacker.speed * 2;
+            enemyHit.GetComponent<TMP_Text>().text = defenderHitRate.ToString();
+
+            int attackerCritRate = attacker.luck + (int)attacker.GetComponent<CharacterInventory>().equippedWeapon.critChance - defender.luck;
+            playerCrit.GetComponent<TMP_Text>().text = attackerCritRate.ToString();
+            int defenderCritRate = defender.luck + (int)defender.GetComponent<CharacterInventory>().equippedWeapon.critChance - attacker.luck;
+            enemyCrit.GetComponent<TMP_Text>().text = defenderCritRate.ToString();
+
+
+            CombatMenu.SetActive(true);
+            
+            UnityEngine.UI.Button AttackButton = GameObject.Find("AttackButton").GetComponent<UnityEngine.UI.Button>();
+            AttackButton.onClick.RemoveAllListeners();
+            AttackButton.onClick.AddListener(() => CombatManager.Instance.Attack(attacker, defender, attackerHitRate, defenderHitRate, attackerDamage, defenderDamage, attackerCritRate, defenderCritRate)); 
+        }
         
 
         private void PositionCharacterOnLine(OverlayTile tile)
