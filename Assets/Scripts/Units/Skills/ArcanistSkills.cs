@@ -107,17 +107,18 @@ public class ArcanistSkills : MonoBehaviour
     private void SelectUI(ItemManager item, int cost)
     {
         TMP_Text[] texts = uiSpaces[currentIndex].GetComponentsInChildren<TMP_Text>();
-        Image spriteImage = uiSpaces[currentIndex].GetComponentInChildren<Image>();
+        Image[] spriteImage = uiSpaces[currentIndex].GetComponentsInChildren<Image>();
 
-        spriteImage.sprite = item.itemRef.itemSprite;
+        spriteImage[1].sprite = item.itemRef.itemSprite;
         texts[0].text = item.attachedSkill.SkillName;
         texts[1].text = item.attachedSkill.SkillRarity;
-        texts[2].text = cost.ToString();
     }
     private void SetButton(GameObject skillBook, int cost)
     {
-        Button button = uiSpaces[currentIndex].GetComponentInChildren<Button>();
-        button.onClick.AddListener(() => BuySkill(skillBook, button, cost));
+        Button[] button = uiSpaces[currentIndex].GetComponentsInChildren<Button>();
+        button[1].onClick.AddListener(() => BuySkill(skillBook, button[1], cost));
+
+        uiSpaces[currentIndex].GetComponent<SkillCarrier>().connectedSkill = skillBook;
     }
 
     public void BuySkill(GameObject skillBook, Button button, int cost)

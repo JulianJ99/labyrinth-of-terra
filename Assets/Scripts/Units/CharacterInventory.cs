@@ -9,15 +9,12 @@ public class CharacterInventory : MonoBehaviour
     public int inventorySpace;
     public WeaponManager equippedWeapon;
     // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
     public void AddToInventory(GameObject item)
     {
         if(inventory.Count <= inventorySpace)
         {
             inventory.Add(item);
+            item.transform.parent = transform;
         }
         else
         {
