@@ -83,7 +83,7 @@ namespace Terra
             return finishedList;
         }
 
-        private int GetManhattenDistance(OverlayTile start, OverlayTile tile)
+        public int GetManhattenDistance(OverlayTile start, OverlayTile tile)
         {
             return Mathf.Abs(start.gridLocation.x - tile.gridLocation.x) + Mathf.Abs(start.gridLocation.y - tile.gridLocation.y);
         }

@@ -44,7 +44,11 @@ public class GameManager : MonoBehaviour
 
             case GameState.EnemiesTurn:
                 Debug.Log("Enemies turn!");
-                Instance.ChangeState(GameState.TurnReset);
+                foreach(GameObject enemy in EnemyManager.Instance.enemyList){
+                    BaseUnit thisEnemy = enemy.GetComponent<BaseUnit>();
+                    EnemyController.Instance.CalculateBestScenario(thisEnemy);
+                }
+                
                 break;
 
             case GameState.TurnReset:

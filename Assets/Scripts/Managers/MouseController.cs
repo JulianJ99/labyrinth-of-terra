@@ -224,13 +224,25 @@ namespace Terra
             enemyDamage.GetComponent<TMP_Text>().text = defenderDamage.ToString();
 
             int attackerHitRate = attacker.dexterity * 2 + (int)attacker.GetComponent<CharacterInventory>().equippedWeapon.hitChance - defender.speed * 2;
+            if(attackerHitRate <= 0){
+                attackerHitRate = 0;
+            }
             playerHit.GetComponent<TMP_Text>().text = attackerHitRate.ToString();
             int defenderHitRate = defender.dexterity * 2 + (int)defender.GetComponent<CharacterInventory>().equippedWeapon.hitChance - attacker.speed * 2;
+            if(defenderHitRate <= 0){
+                defenderHitRate = 0;
+            }
             enemyHit.GetComponent<TMP_Text>().text = defenderHitRate.ToString();
 
             int attackerCritRate = attacker.luck + (int)attacker.GetComponent<CharacterInventory>().equippedWeapon.critChance - defender.luck;
+            if(attackerCritRate <= 0){
+                attackerCritRate = 0;
+            }
             playerCrit.GetComponent<TMP_Text>().text = attackerCritRate.ToString();
             int defenderCritRate = defender.luck + (int)defender.GetComponent<CharacterInventory>().equippedWeapon.critChance - attacker.luck;
+            if(defenderCritRate <= 0){
+                defenderCritRate = 0;
+            }
             enemyCrit.GetComponent<TMP_Text>().text = defenderCritRate.ToString();
 
 
